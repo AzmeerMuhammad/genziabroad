@@ -25,15 +25,15 @@ export default function Accordion({ items }: AccordionProps) {
       {items.map((item, index) => (
         <div
           key={index}
-          className="border border-gray-200 rounded-lg overflow-hidden hover:border-primary-300 transition-colors"
+          className="border border-gray-100 rounded-md overflow-hidden hover:border-gray-300 transition-colors shadow-sm"
         >
           {/* Question Button */}
           <button
             onClick={() => toggleItem(index)}
-            className="w-full flex items-center justify-between px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="w-full flex items-center justify-between px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-900"
             aria-expanded={openIndex === index}
           >
-            <span className="font-semibold text-gray-900 pr-4">{item.question}</span>
+            <span className="font-sans font-medium text-gray-900 pr-4">{item.question}</span>
             <motion.div
               animate={{ rotate: openIndex === index ? 180 : 0 }}
               transition={{ duration: 0.3 }}
@@ -53,7 +53,7 @@ export default function Accordion({ items }: AccordionProps) {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
               >
-                <div className="px-6 py-4 bg-gray-50 text-gray-700 leading-relaxed">
+                <div className="px-6 py-4 bg-gray-50 font-sans text-gray-600 leading-relaxed">
                   {item.answer}
                 </div>
               </motion.div>

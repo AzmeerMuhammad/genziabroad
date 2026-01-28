@@ -91,8 +91,15 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen pt-24 pb-16">
-      <div className="container-custom px-4 md:px-8">
+    <main className="relative min-h-screen pt-24 pb-16 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80)' }}
+        />
+      </div>
+      <div className="container-custom px-4 md:px-8 relative z-10">
         {/* Back Button */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -116,10 +123,10 @@ export default function ServicesPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-gray-900 mb-6">
             Our Services
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl font-sans text-gray-600 max-w-3xl mx-auto">
             Comprehensive student support services designed to make your study abroad journey
             smooth, stress-free, and successful from start to finish.
           </p>
@@ -136,22 +143,22 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white border border-gray-200 rounded-2xl p-8 md:p-10 hover:shadow-xl transition-shadow"
+                className="bg-white border border-gray-100 shadow-lg shadow-gray-200/50 rounded-2xl p-8 md:p-10 hover:-translate-y-1 transition-transform"
               >
                 <div className="flex flex-col md:flex-row gap-6">
                   {/* Icon and Title */}
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-16 h-16 bg-primary-50 rounded-xl">
-                      <Icon className="w-8 h-8 text-primary-600" />
+                    <div className="flex items-center justify-center w-16 h-16 bg-blue-50 rounded-xl">
+                      <Icon className="w-8 h-8 text-blue-600" />
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+                    <h2 className="text-2xl md:text-3xl font-bold font-serif text-gray-900 mb-3">
                       {service.title}
                     </h2>
-                    <p className="text-lg text-gray-600 mb-6">
+                    <p className="text-lg font-sans text-gray-600 mb-6">
                       {service.description}
                     </p>
 
@@ -160,7 +167,7 @@ export default function ServicesPage() {
                       {service.details.map((detail, idx) => (
                         <div key={idx} className="flex items-start gap-3">
                           <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700">{detail}</span>
+                          <span className="font-sans text-gray-700">{detail}</span>
                         </div>
                       ))}
                     </div>
@@ -179,15 +186,15 @@ export default function ServicesPage() {
           transition={{ duration: 0.6 }}
           className="mt-16 text-center bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8 md:p-12"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold font-serif text-gray-900 mb-4">
             Ready to Start Your Journey?
           </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg font-sans text-gray-600 mb-8 max-w-2xl mx-auto">
             Book a free consultation to discuss which service package is right for you
           </p>
           <Link
             href="/#book-now"
-            className="inline-block px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all"
+            className="inline-block px-8 py-4 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all"
           >
             Book Your Consultation
           </Link>

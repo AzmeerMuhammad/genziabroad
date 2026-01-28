@@ -79,12 +79,12 @@ export default function FAQModal({ isOpen, onClose }: FAQModalProps) {
             className="fixed left-1/2 top-1/2 w-[90vw] max-w-3xl max-h-[85vh] bg-white rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="flex items-start justify-between p-6 border-b border-gray-200 shrink-0">
+            <div className="flex items-start justify-between p-6 border-b border-gray-100 shrink-0">
               <div className="flex-1 pr-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                <h2 className="font-serif text-2xl md:text-3xl text-gray-900">
                   Frequently Asked Questions
                 </h2>
-                <p className="text-gray-600 mt-1">
+                <p className="font-sans text-gray-600 mt-1">
                   Find answers to common questions about our services
                 </p>
               </div>
@@ -103,15 +103,15 @@ export default function FAQModal({ isOpen, onClose }: FAQModalProps) {
             </div>
 
             {/* Footer */}
-            <div className="p-6 border-t border-gray-200 bg-gray-50 rounded-b-2xl shrink-0">
-              <p className="text-center text-gray-600 mb-4">
+            <div className="p-6 border-t border-gray-100 bg-gray-50 rounded-b-2xl shrink-0">
+              <p className="font-sans text-center text-gray-600 mb-4">
                 Still have questions? We're here to help!
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a
                   href="/#contact"
                   onClick={onClose}
-                  className="px-6 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors text-center"
+                  className="px-6 py-2.5 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md transition-colors text-center"
                 >
                   Contact Us
                 </a>
@@ -119,7 +119,7 @@ export default function FAQModal({ isOpen, onClose }: FAQModalProps) {
                   href="https://wa.me/923001234567?text=Hello!%20I%20have%20a%20question."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2.5 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors text-center"
+                  className="px-6 py-2.5 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md transition-colors text-center"
                 >
                   WhatsApp Us
                 </a>

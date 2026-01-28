@@ -17,7 +17,7 @@ export default function FloatingFAQButton() {
         transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed right-0 top-1/2 -translate-y-1/2 z-40 flex items-center gap-2 px-4 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-l-lg shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-4 focus:ring-primary-300"
+        className="fixed right-0 top-1/2 -translate-y-1/2 z-40 flex items-center gap-2 px-4 py-3 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-l-md shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-4 focus:ring-gray-700"
         aria-label="Open FAQs"
         style={{ writingMode: 'vertical-rl' }}
       >

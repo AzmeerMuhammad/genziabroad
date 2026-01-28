@@ -105,8 +105,15 @@ const teamMembers = [
 
 export default function TeamPage() {
   return (
-    <main className="min-h-screen pt-24 pb-16">
-      <div className="container-custom px-4 md:px-8">
+    <main className="relative min-h-screen pt-24 pb-16 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80)' }}
+        />
+      </div>
+      <div className="container-custom px-4 md:px-8 relative z-10">
         {/* Back Button */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -130,10 +137,10 @@ export default function TeamPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-gray-900 mb-6">
             Meet Our Expert Team
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl font-sans text-gray-600 max-w-3xl mx-auto">
             Our dedicated team of education consultants, visa experts, and student support specialists
             are here to guide you every step of the way to your European study destination.
           </p>
@@ -148,7 +155,7 @@ export default function TeamPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, delay: index * 0.05 }}
-              className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-shadow"
+              className="bg-white border border-gray-100 shadow-lg shadow-gray-200/50 rounded-xl overflow-hidden hover:-translate-y-1 transition-transform"
             >
               {/* Photo */}
               <div className="relative overflow-hidden aspect-square">
@@ -180,32 +187,32 @@ export default function TeamPage() {
 
               {/* Info */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                <p className="text-primary-600 font-semibold mb-3">{member.role}</p>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">{member.bio}</p>
+                <h3 className="text-xl font-bold font-serif text-gray-900 mb-1">{member.name}</h3>
+                <p className="font-sans text-primary-600 font-semibold mb-3">{member.role}</p>
+                <p className="font-sans text-gray-600 text-sm mb-4 leading-relaxed">{member.bio}</p>
 
                 {/* Details */}
                 <div className="space-y-2 mb-4">
                   <div className="flex items-start gap-2">
-                    <GraduationCap className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-xs text-gray-600">{member.qualifications}</span>
+                    <GraduationCap className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-xs font-sans text-gray-600">{member.qualifications}</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Globe2 className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-xs text-gray-600">{member.specialization}</span>
+                    <Globe2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-xs font-sans text-gray-600">{member.specialization}</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Award className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-xs text-gray-600">{member.experience} experience</span>
+                    <Award className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-xs font-sans text-gray-600">{member.experience} experience</span>
                   </div>
                 </div>
 
                 {/* Achievements */}
                 <div className="pt-4 border-t border-gray-100">
-                  <h4 className="text-xs font-semibold text-gray-700 mb-2">Key Achievements</h4>
+                  <h4 className="text-xs font-semibold font-serif text-gray-700 mb-2">Key Achievements</h4>
                   <ul className="space-y-1">
                     {member.achievements.map((achievement, idx) => (
-                      <li key={idx} className="text-xs text-gray-600 flex items-start gap-1.5">
+                      <li key={idx} className="text-xs font-sans text-gray-600 flex items-start gap-1.5">
                         <span className="text-primary-500 mt-1">•</span>
                         <span>{achievement}</span>
                       </li>
@@ -225,15 +232,15 @@ export default function TeamPage() {
           transition={{ duration: 0.6 }}
           className="text-center bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8 md:p-12"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold font-serif text-gray-900 mb-4">
             Work With Our Expert Team
           </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg font-sans text-gray-600 mb-8 max-w-2xl mx-auto">
             Schedule a consultation with our team and take the first step towards your European education
           </p>
           <Link
             href="/#book-now"
-            className="inline-block px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all"
+            className="inline-block px-8 py-4 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all"
           >
             Book a Consultation
           </Link>

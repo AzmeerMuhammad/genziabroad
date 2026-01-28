@@ -40,8 +40,15 @@ const faqItems: AccordionItem[] = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="section-padding bg-gray-50">
-      <div className="container-custom">
+    <section id="faq" className="relative section-padding bg-gray-50 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80)' }}
+        />
+      </div>
+      <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,10 +56,10 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-gray-900 mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg font-sans text-gray-600 max-w-3xl mx-auto">
             Find answers to common questions about our services, process, and how we can
             help your business succeed.
           </p>

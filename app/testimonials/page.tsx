@@ -105,8 +105,15 @@ const testimonials = [
 
 export default function TestimonialsPage() {
   return (
-    <main className="min-h-screen pt-24 pb-16">
-      <div className="container-custom px-4 md:px-8">
+    <main className="relative min-h-screen pt-24 pb-16 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80)' }}
+        />
+      </div>
+      <div className="container-custom px-4 md:px-8 relative z-10">
         {/* Back Button */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -130,10 +137,10 @@ export default function TestimonialsPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-gray-900 mb-6">
             Student Success Stories
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl font-sans text-gray-600 max-w-3xl mx-auto">
             Real experiences from students who achieved their dream of studying in Europe
             with GenziAbroad's expert guidance and support.
           </p>
@@ -148,7 +155,7 @@ export default function TestimonialsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, delay: index * 0.05 }}
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow"
+              className="bg-white border border-gray-100 shadow-lg shadow-gray-200/50 rounded-xl p-6 hover:-translate-y-1 transition-transform"
             >
               {/* Quote Icon */}
               <div className="flex items-center justify-between mb-4">
@@ -161,7 +168,7 @@ export default function TestimonialsPage() {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="font-sans text-gray-600 mb-6 leading-relaxed">
                 {testimonial.text}
               </p>
 
@@ -173,9 +180,9 @@ export default function TestimonialsPage() {
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
-                  <p className="text-sm text-gray-500">{testimonial.program}</p>
-                  <p className="text-xs text-primary-600 font-medium mt-0.5">
+                  <h3 className="font-semibold font-serif text-gray-900">{testimonial.name}</h3>
+                  <p className="text-sm font-sans text-gray-500">{testimonial.program}</p>
+                  <p className="text-xs font-sans text-primary-600 font-medium mt-0.5">
                     {testimonial.country}
                   </p>
                 </div>
@@ -192,15 +199,15 @@ export default function TestimonialsPage() {
           transition={{ duration: 0.6 }}
           className="text-center bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8 md:p-12"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold font-serif text-gray-900 mb-4">
             Start Your Success Story Today
           </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg font-sans text-gray-600 mb-8 max-w-2xl mx-auto">
             Join hundreds of Pakistani students who are now studying at top European universities
           </p>
           <Link
             href="/#book-now"
-            className="inline-block px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all"
+            className="inline-block px-8 py-4 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all"
           >
             Book Your Free Consultation
           </Link>

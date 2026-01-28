@@ -9,7 +9,6 @@ interface NavigationProps {
 }
 
 const navLinks = [
-  { label: 'Home', href: '#hero' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Testimonials', href: '#testimonials' },
@@ -73,8 +72,8 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
           >
             <div className="flex flex-col h-full">
               {/* Menu Header */}
-              <div className="flex items-center justify-between h-16 md:h-20 px-6 border-b border-gray-200">
-                <h2 className="text-lg font-semibold text-gray-900">Menu</h2>
+              <div className="flex items-center justify-between h-16 md:h-20 px-6 border-b border-gray-100">
+                <h2 className="font-serif text-lg text-gray-900">Menu</h2>
               </div>
 
               {/* Navigation Links */}
@@ -89,7 +88,7 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
                     >
                       <button
                         onClick={() => handleLinkClick(link.href)}
-                        className="w-full text-left px-4 py-3 text-lg font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
+                        className="w-full text-left px-4 py-3 text-lg font-medium text-gray-900 hover:text-gray-700 hover:bg-gray-50 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-gray-900"
                       >
                         {link.label}
                       </button>

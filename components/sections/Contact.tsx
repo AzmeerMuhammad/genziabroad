@@ -32,8 +32,15 @@ const contactInfo = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="section-padding bg-white">
-      <div className="container-custom">
+    <section id="contact" className="relative section-padding bg-white overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80)' }}
+        />
+      </div>
+      <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,10 +48,10 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-gray-900 mb-4">
             Get In Touch
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg font-sans text-gray-600 max-w-3xl mx-auto">
             Ready to start your European study journey? Contact us today to discuss
             how we can help you achieve your dream of studying abroad.
           </p>
@@ -61,14 +68,14 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="flex items-start gap-4 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
+                  className="flex items-start gap-4 p-6 bg-white border border-gray-100 shadow-lg shadow-gray-200/50 rounded-xl hover:-translate-y-1 transition-transform"
                 >
-                  <div className="flex items-center justify-center w-12 h-12 bg-primary-100 rounded-lg flex-shrink-0">
-                    <Icon className="w-6 h-6 text-primary-600" />
+                  <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-lg flex-shrink-0">
+                    <Icon className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{item.label}</h3>
-                    <p className="text-gray-600">{item.value}</p>
+                    <h3 className="font-semibold font-serif text-gray-900 mb-1">{item.label}</h3>
+                    <p className="font-sans text-gray-600">{item.value}</p>
                   </div>
                 </motion.div>
               );
@@ -92,17 +99,17 @@ export default function Contact() {
             className="mt-12 text-center"
           >
             <div className="inline-block p-8 bg-gradient-to-br from-green-50 to-primary-50 rounded-2xl">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold font-serif text-gray-900 mb-3">
                 Quick Questions?
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="font-sans text-gray-600 mb-6">
                 Message us on WhatsApp for instant answers about admissions and services
               </p>
               <a
                 href="https://wa.me/923001234567?text=Hello!%20I%20would%20like%20to%20book%20a%20consultation."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-4 focus:ring-green-300"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-4 focus:ring-green-300"
               >
                 <Phone className="w-5 h-5" />
                 WhatsApp Us

@@ -23,8 +23,15 @@ const values = [
 
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-gray-50">
-      <div className="container-custom">
+    <section id="about" className="relative section-padding bg-gray-50 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80)' }}
+        />
+      </div>
+      <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,10 +39,10 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-gray-900 mb-4">
             About GenziAbroad
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg font-sans text-gray-600 max-w-3xl mx-auto">
             We are Pakistan's trusted student consultancy firm, specializing in helping students
             secure admissions in European universities and managing their entire study abroad journey.
           </p>
@@ -51,13 +58,13 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white border border-gray-100 shadow-lg shadow-gray-200/50 p-8 rounded-xl hover:-translate-y-1 transition-transform"
               >
-                <div className="flex items-center justify-center w-14 h-14 bg-primary-100 rounded-lg mb-6">
-                  <Icon className="w-7 h-7 text-primary-600" />
+                <div className="flex items-center justify-center w-14 h-14 bg-blue-50 rounded-lg mb-6">
+                  <Icon className="w-7 h-7 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-semibold font-serif text-gray-900 mb-3">{value.title}</h3>
+                <p className="font-sans text-gray-600 leading-relaxed">{value.description}</p>
               </motion.div>
             );
           })}

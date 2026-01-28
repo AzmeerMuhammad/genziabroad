@@ -6,7 +6,6 @@ import Navigation from './Navigation';
 import Link from 'next/link';
 
 const navLinks = [
-  { href: '/#home', label: 'Home' },
   { href: '/#services', label: 'Services' },
   { href: '/#testimonials', label: 'Testimonials' },
   { href: '/#team', label: 'Team' },
@@ -40,14 +39,14 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+      <header className="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="container-custom flex items-center justify-between h-16 md:h-20 px-4 md:px-8">
           {/* Logo Placeholder - Top Left */}
-          <div className="flex items-center">
-            <div className="flex items-center justify-center w-40 h-10 md:w-48 md:h-12 border-2 border-dashed border-gray-300 rounded-md">
+          <Link href="/" className="flex items-center">
+            <div className="flex items-center justify-center w-40 h-10 md:w-48 md:h-12 border-2 border-dashed border-gray-300 rounded-md hover:border-gray-400 transition-colors cursor-pointer">
               <span className="text-xs md:text-sm text-gray-500 font-medium">LOGO HERE</span>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation Links - Hidden on Mobile */}
           <nav className="hidden md:flex items-center gap-6">
@@ -58,8 +57,8 @@ export default function Header() {
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={
                   link.label === 'Book Now'
-                    ? "px-6 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors shadow-sm hover:shadow-md"
-                    : "text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                    ? "px-6 py-2 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md transition-colors"
+                    : "text-gray-900 hover:text-gray-700 font-medium transition-colors"
                 }
               >
                 {link.label}
@@ -72,7 +71,7 @@ export default function Header() {
             onClick={toggleMenu}
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen}
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-900"
           >
             {isMenuOpen ? (
               <X className="w-6 h-6 text-gray-900" />

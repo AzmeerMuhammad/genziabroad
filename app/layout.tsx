@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Serif_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import FloatingFAQButton from "@/components/ui/FloatingFAQButton";
 
-const inter = Inter({
+const dmSerif = DM_Serif_Display({
+  weight: ['400'],
   subsets: ["latin"],
-  variable: '--font-inter',
+  variable: '--font-serif',
+});
+
+const poppins = Poppins({
+  weight: ['300', '400', '500', '600'],
+  subsets: ["latin"],
+  variable: '--font-sans',
 });
 
 export const metadata: Metadata = {
@@ -20,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" className={`${dmSerif.variable} ${poppins.variable}`}>
+      <body className={`${poppins.className} antialiased`}>
         {children}
         <FloatingFAQButton />
       </body>

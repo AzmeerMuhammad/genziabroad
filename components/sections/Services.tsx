@@ -33,10 +33,10 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-4">
             Our Services
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="font-sans text-lg text-gray-600 max-w-3xl mx-auto">
             Comprehensive student support services designed to make your study abroad journey
             smooth, stress-free, and successful from start to finish.
           </p>
@@ -52,13 +52,13 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group p-6 border border-gray-200 rounded-xl hover:border-primary-300 hover:shadow-lg transition-all"
+                className="bg-white p-6 border border-gray-100 rounded-lg shadow-lg shadow-gray-200/50 hover:-translate-y-1 transition-transform"
               >
-                <div className="flex items-center justify-center w-12 h-12 bg-primary-50 group-hover:bg-primary-100 rounded-lg mb-4 transition-colors">
-                  <Icon className="w-6 h-6 text-primary-600" />
+                <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-md mb-4">
+                  <Icon className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                <h3 className="font-sans text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
+                <p className="font-sans text-gray-600 leading-relaxed">{service.description}</p>
               </motion.div>
             );
           })}
@@ -74,7 +74,7 @@ export default function Services() {
         >
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all group"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md shadow-lg hover:shadow-xl transition-all group"
           >
             Explore All Services
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

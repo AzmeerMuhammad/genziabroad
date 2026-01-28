@@ -29,16 +29,16 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight text-white mb-6">
             Your Gateway to
-            <span className="block text-primary-300">Study in Europe</span>
+            <span className="block">Study in Europe</span>
           </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto"
+            className="font-sans text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto"
           >
             Complete student consultancy services from admission to accommodation.
             Let us help you achieve your dream of studying abroad in Europe.
@@ -51,7 +51,7 @@ export default function Hero() {
           >
             <button
               onClick={scrollToBooking}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-4 focus:ring-primary-300"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-4 focus:ring-gray-700"
             >
               Book Your Consultation
               <ArrowRight className="w-5 h-5" />

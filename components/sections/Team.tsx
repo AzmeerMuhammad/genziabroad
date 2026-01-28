@@ -41,8 +41,15 @@ const teamMembers = [
 
 export default function Team() {
   return (
-    <section id="team" className="section-padding bg-white">
-      <div className="container-custom">
+    <section id="team" className="relative section-padding bg-white overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80)' }}
+        />
+      </div>
+      <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,10 +57,10 @@ export default function Team() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-gray-900 mb-4">
             Meet Our Team
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg font-sans text-gray-600 max-w-3xl mx-auto">
             Our dedicated team of education consultants and experts are here to guide you
             every step of the way to your European study destination.
           </p>
@@ -99,9 +106,9 @@ export default function Team() {
 
               {/* Info */}
               <div className="text-center">
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
-                <p className="text-primary-600 font-medium mb-3">{member.role}</p>
-                <p className="text-sm text-gray-600 leading-relaxed">{member.bio}</p>
+                <h3 className="text-xl font-semibold font-serif text-gray-900 mb-1">{member.name}</h3>
+                <p className="text-primary-600 font-medium font-sans mb-3">{member.role}</p>
+                <p className="text-sm font-sans text-gray-600 leading-relaxed">{member.bio}</p>
               </div>
             </motion.div>
           ))}
@@ -117,7 +124,7 @@ export default function Team() {
         >
           <Link
             href="/team"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all group"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all group"
           >
             Meet the Full Team
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
