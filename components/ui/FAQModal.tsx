@@ -72,15 +72,15 @@ export default function FAQModal({ isOpen, onClose }: FAQModalProps) {
 
           {/* Modal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            initial={{ opacity: 0, scale: 0.95, x: "-50%", y: "-50%" }}
+            animate={{ opacity: 1, scale: 1, x: "-50%", y: "-50%" }}
+            exit={{ opacity: 0, scale: 0.95, x: "-50%", y: "-50%" }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed inset-4 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-3xl md:max-h-[85vh] bg-white rounded-2xl shadow-2xl z-50 flex flex-col"
+            className="fixed left-1/2 top-1/2 w-[90vw] max-w-3xl max-h-[85vh] bg-white rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200">
-              <div>
+            <div className="flex items-start justify-between p-6 border-b border-gray-200 shrink-0">
+              <div className="flex-1 pr-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
                   Frequently Asked Questions
                 </h2>
@@ -90,7 +90,7 @@ export default function FAQModal({ isOpen, onClose }: FAQModalProps) {
               </div>
               <button
                 onClick={onClose}
-                className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors"
+                className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors flex-shrink-0"
                 aria-label="Close FAQs"
               >
                 <X className="w-6 h-6 text-gray-500" />
@@ -103,7 +103,7 @@ export default function FAQModal({ isOpen, onClose }: FAQModalProps) {
             </div>
 
             {/* Footer */}
-            <div className="p-6 border-t border-gray-200 bg-gray-50 rounded-b-2xl">
+            <div className="p-6 border-t border-gray-200 bg-gray-50 rounded-b-2xl shrink-0">
               <p className="text-center text-gray-600 mb-4">
                 Still have questions? We're here to help!
               </p>

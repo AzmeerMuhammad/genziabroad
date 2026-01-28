@@ -1,6 +1,6 @@
 'use client';
 
-import { Briefcase, Users, TrendingUp, Globe, FileText, Lightbulb, CheckCircle } from 'lucide-react';
+import { Briefcase, Users, TrendingUp, Globe, FileText, Lightbulb, CheckCircle, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -93,6 +93,22 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen pt-24 pb-16">
       <div className="container-custom px-4 md:px-8">
+        {/* Back Button */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4 }}
+          className="mb-8"
+        >
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-gray-600 hover:text-primary-600 font-medium transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Back to Home
+          </Link>
+        </motion.div>
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

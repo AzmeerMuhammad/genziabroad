@@ -7,9 +7,9 @@ import Link from 'next/link';
 
 const navLinks = [
   { href: '/#home', label: 'Home' },
-  { href: '/services', label: 'Services' },
-  { href: '/testimonials', label: 'Testimonials' },
-  { href: '/team', label: 'Team' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#testimonials', label: 'Testimonials' },
+  { href: '/#team', label: 'Team' },
   { href: '/#contact', label: 'Contact' },
   { href: '/#book-now', label: 'Book Now' },
 ];
@@ -20,8 +20,14 @@ export default function Header() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('/#')) {
+      // If we're not on the home page, navigate to home first
+      if (window.location.pathname !== '/') {
+        window.location.href = href;
+        return;
+      }
+      // We're on home page, do smooth scroll
       e.preventDefault();
       const id = href.substring(2);
       const element = document.getElementById(id);
@@ -44,13 +50,17 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation Links - Hidden on Mobile */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={(e) => handleSmoothScroll(e, link.href)}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={
+                  link.label === 'Book Now'
+                    ? "px-6 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors shadow-sm hover:shadow-md"
+                    : "text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                }
               >
                 {link.label}
               </Link>
