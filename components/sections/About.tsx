@@ -7,17 +7,17 @@ const values = [
   {
     icon: Target,
     title: 'Our Mission',
-    description: 'To provide exceptional consultancy services that empower our clients to achieve their goals and exceed their expectations.',
+    description: 'To empower students from Pakistan to achieve their dreams of studying in Europe through comprehensive support and guidance at every step of their journey.',
   },
   {
     icon: Heart,
     title: 'Our Values',
-    description: 'Integrity, excellence, and client satisfaction are at the core of everything we do. We build lasting relationships based on trust.',
+    description: 'Student success, transparency, and personalized attention are at the core of everything we do. We treat every student like family.',
   },
   {
     icon: Award,
     title: 'Our Expertise',
-    description: 'With years of experience serving clients across Pakistan and Europe, we bring proven strategies and industry knowledge.',
+    description: 'Years of experience in admissions, visa processing, document attestation, and student support across European universities.',
   },
 ];
 
@@ -36,8 +36,8 @@ export default function About() {
             About GenziAbroad
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We are a leading consultancy firm dedicated to helping businesses and individuals
-            achieve their ambitions through expert guidance and strategic planning.
+            We are Pakistan's trusted student consultancy firm, specializing in helping students
+            secure admissions in European universities and managing their entire study abroad journey.
           </p>
         </motion.div>
 

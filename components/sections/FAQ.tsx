@@ -6,35 +6,35 @@ import Accordion, { AccordionItem } from '@/components/ui/Accordion';
 const faqItems: AccordionItem[] = [
   {
     question: 'What services does GenziAbroad offer?',
-    answer: 'We offer comprehensive consultancy services including business consulting, HR advisory, financial planning, international expansion support, legal compliance, and innovation strategy. Our services are tailored to meet the specific needs of each client.',
+    answer: 'We offer complete student consultancy services including university admissions, visa processing, document attestation and verification, accommodation arrangements, and university transfer services for students already in Europe. We have packages both with and without accommodation.',
   },
   {
-    question: 'Which regions do you serve?',
-    answer: 'We primarily serve clients in Pakistan and Europe, with expertise in navigating business landscapes across both regions. Our international network allows us to support clients with cross-border operations and expansion plans.',
+    question: 'Which European countries do you help students get admitted to?',
+    answer: 'We specialize in securing admissions across Europe, with primary focus on Germany, Netherlands, Austria, Poland, Czech Republic, and other EU countries. Our network includes partnerships with numerous universities across the continent.',
   },
   {
-    question: 'How do I book a consultation?',
-    answer: 'You can book a consultation by clicking the "Book Now" button on our website, which will direct you to our Calendly scheduling page. Alternatively, you can contact us directly via WhatsApp or email to arrange a consultation.',
+    question: 'What\'s the difference between your service packages?',
+    answer: 'We offer two main packages: (1) Complete Package without Accommodation - includes admission, visa processing, and document handling. (2) Complete Package with Accommodation - includes everything plus secure housing arrangements in your destination city. We also offer standalone services for students who need specific support.',
   },
   {
-    question: 'What is the typical duration of a consultancy engagement?',
-    answer: 'The duration varies based on your specific needs and project scope. Initial consultations typically last 1-2 hours, while comprehensive projects can span several months. We work flexibly to accommodate your timeline and objectives.',
+    question: 'How long does the admission and visa process take?',
+    answer: 'The timeline varies by university and country, but typically the complete process takes 3-6 months from application to visa approval. We work efficiently to ensure you meet all deadlines and start your program on time.',
   },
   {
-    question: 'Do you offer both in-person and virtual consultations?',
-    answer: 'Yes, we offer both in-person meetings (in select locations) and virtual consultations via video conferencing. This flexibility ensures we can serve clients effectively regardless of their location.',
+    question: 'Do you help students already studying in Europe?',
+    answer: 'Yes! We offer university transfer services for international students already in Europe who want to change universities. We handle the entire transfer process including admission to the new university, visa updates, and accommodation if needed.',
   },
   {
-    question: 'What industries do you specialize in?',
-    answer: 'Our team has experience across multiple industries including technology, finance, manufacturing, healthcare, retail, and professional services. We leverage cross-industry insights to provide innovative solutions.',
+    question: 'What documents do I need for the application process?',
+    answer: 'Typically you\'ll need academic transcripts, degree certificates, passport, language proficiency test results (IELTS/TOEFL/German language certificates), motivation letter, and CV. We provide a complete checklist and help with document attestation and verification.',
   },
   {
-    question: 'How do you ensure confidentiality?',
-    answer: 'Client confidentiality is paramount. We sign non-disclosure agreements (NDAs) and maintain strict data protection protocols. All client information is handled with the utmost security and discretion.',
+    question: 'How much does your service cost?',
+    answer: 'Our fees vary depending on the package you choose and the services required. We offer transparent pricing with no hidden charges. Contact us for a detailed quote based on your specific needs and destination country.',
   },
   {
-    question: 'What are your consultation fees?',
-    answer: 'Our fees vary depending on the scope and complexity of the project. We offer flexible pricing models including hourly rates, project-based fees, and retainer arrangements. Contact us for a customized quote based on your specific needs.',
+    question: 'Do you provide post-arrival support?',
+    answer: 'Yes! For students who choose our complete package with accommodation, we provide support with settling in, including help with registration, bank account opening guidance, and orientation to your new city.',
   },
 ];
 

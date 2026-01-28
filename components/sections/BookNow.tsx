@@ -21,12 +21,12 @@ export default function BookNow() {
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Ready to Get Started?
+            Ready to Study in Europe?
           </h2>
 
           <p className="text-lg md:text-xl text-primary-100 mb-10 max-w-2xl mx-auto">
-            Book your free consultation today and discover how GenziAbroad can help
-            transform your business and achieve your goals.
+            Book your free consultation today and take the first step towards your
+            European education dream with GenziAbroad.
           </p>
 
           <motion.div

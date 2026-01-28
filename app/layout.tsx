@@ -8,9 +8,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "GenziAbroad - Professional Consultancy Services",
-  description: "Expert consultancy services for clients in Pakistan and Europe. Book your consultation today.",
-  keywords: "consultancy, professional services, Pakistan, Europe",
+  title: "GenziAbroad - Study in Europe | Student Consultancy Pakistan",
+  description: "Complete student consultancy services for studying in Europe. We handle admissions, visa processing, document attestation, and accommodation. Your gateway to European education.",
+  keywords: "study in Europe, student consultancy Pakistan, university admission, visa processing, study abroad, European universities, student visa, accommodation",
 };
 
 export default function RootLayout({

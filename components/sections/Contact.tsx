@@ -18,8 +18,8 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    label: 'Locations',
-    value: 'Karachi, Pakistan • Munich, Germany',
+    label: 'Office Location',
+    value: 'Karachi, Pakistan',
     href: null,
   },
   {
@@ -45,8 +45,8 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Ready to take your business to the next level? Contact us today to discuss
-            how we can help you achieve your goals.
+            Ready to start your European study journey? Contact us today to discuss
+            how we can help you achieve your dream of studying abroad.
           </p>
         </motion.div>
 
@@ -93,10 +93,10 @@ export default function Contact() {
           >
             <div className="inline-block p-8 bg-gradient-to-br from-green-50 to-primary-50 rounded-2xl">
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Prefer to chat?
+                Quick Questions?
               </h3>
               <p className="text-gray-600 mb-6">
-                Message us on WhatsApp for quick responses
+                Message us on WhatsApp for instant answers about admissions and services
               </p>
               <a
                 href="https://wa.me/923001234567?text=Hello!%20I%20would%20like%20to%20book%20a%20consultation."

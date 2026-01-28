@@ -6,33 +6,33 @@ import { motion } from 'framer-motion';
 const services = [
   {
     icon: Briefcase,
-    title: 'Business Consulting',
-    description: 'Strategic planning and business development guidance to help your company grow and thrive in competitive markets.',
-  },
-  {
-    icon: Users,
-    title: 'HR Consulting',
-    description: 'Human resources management, talent acquisition, and organizational development solutions tailored to your needs.',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Financial Advisory',
-    description: 'Expert financial planning, investment strategies, and risk management to secure your financial future.',
-  },
-  {
-    icon: Globe,
-    title: 'International Expansion',
-    description: 'Navigate global markets with confidence through our expertise in international business operations.',
+    title: 'University Admissions',
+    description: 'Expert guidance in selecting and securing admissions in top European universities that match your academic goals and career aspirations.',
   },
   {
     icon: FileText,
-    title: 'Legal Compliance',
-    description: 'Ensure your business meets all regulatory requirements with our comprehensive compliance consulting.',
+    title: 'Visa Processing',
+    description: 'Complete visa application support with document preparation, interview coaching, and follow-up to ensure smooth visa approval.',
+  },
+  {
+    icon: Globe,
+    title: 'Document Attestation',
+    description: 'Professional document attestation and verification services for all your educational certificates and required paperwork.',
+  },
+  {
+    icon: Users,
+    title: 'Complete Package (No Accommodation)',
+    description: 'Full-service package covering admission, visa processing, and document handling - everything except accommodation arrangements.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Complete Package (With Accommodation)',
+    description: 'All-inclusive service including admission, visa, documents, and secure accommodation arrangements in your destination city.',
   },
   {
     icon: Lightbulb,
-    title: 'Innovation Strategy',
-    description: 'Drive innovation and digital transformation to stay ahead in the rapidly evolving business landscape.',
+    title: 'University Transfer Service',
+    description: 'For international students already in Europe - assistance with changing universities and managing the transfer process seamlessly.',
   },
 ];
 
@@ -51,8 +51,8 @@ export default function Services() {
             Our Services
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Comprehensive consultancy solutions designed to address your unique challenges
-            and unlock new opportunities for growth.
+            Comprehensive student support services designed to make your study abroad journey
+            smooth, stress-free, and successful from start to finish.
           </p>
         </motion.div>
 

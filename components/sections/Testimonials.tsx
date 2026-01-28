@@ -5,25 +5,25 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    name: 'Sarah Ahmed',
-    role: 'CEO, TechVision Pakistan',
-    location: 'Karachi, Pakistan',
-    rating: 5,
-    text: 'GenziAbroad transformed our business strategy. Their expertise in international markets helped us expand to Europe successfully. Highly recommended!',
-  },
-  {
-    name: 'Michael Weber',
-    role: 'Founder, Alpine Ventures',
+    name: 'Ahmed Hassan',
+    role: 'Computer Science Student',
     location: 'Munich, Germany',
     rating: 5,
-    text: 'Professional, knowledgeable, and results-driven. The team provided invaluable guidance that accelerated our growth trajectory significantly.',
+    text: 'GenziAbroad made my dream come true! From admission to visa and finding accommodation in Munich, they handled everything professionally. Now I\'m studying at my dream university!',
   },
   {
-    name: 'Fatima Khan',
-    role: 'Director, Innovation Hub',
-    location: 'Lahore, Pakistan',
+    name: 'Ayesha Malik',
+    role: 'Business Administration Student',
+    location: 'Amsterdam, Netherlands',
     rating: 5,
-    text: 'Exceptional service and attention to detail. Their consultancy helped us navigate complex regulatory challenges with ease.',
+    text: 'The complete package with accommodation was worth every penny. They guided me through every step and even helped me settle in Amsterdam. Highly recommended!',
+  },
+  {
+    name: 'Ali Raza',
+    role: 'Engineering Student',
+    location: 'Berlin, Germany',
+    rating: 5,
+    text: 'I used their university transfer service when I wanted to switch universities. The process was smooth and stress-free. Great support throughout!',
   },
 ];
 
@@ -39,11 +39,11 @@ export default function Testimonials() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Client Testimonials
+            Student Success Stories
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our clients have to say about
-            working with GenziAbroad.
+            Don't just take our word for it. Here's what our students have to say about
+            their experience with GenziAbroad.
           </p>
         </motion.div>
 

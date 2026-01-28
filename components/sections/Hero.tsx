@@ -30,8 +30,8 @@ export default function Hero() {
           className="max-w-4xl mx-auto"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Expert Consultancy Services
-            <span className="block text-primary-300">for Your Success</span>
+            Your Gateway to
+            <span className="block text-primary-300">Study in Europe</span>
           </h1>
 
           <motion.p
@@ -40,8 +40,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto"
           >
-            Professional consultation services tailored for clients in Pakistan and Europe.
-            Let us help you achieve your goals with expert guidance.
+            Complete student consultancy services from admission to accommodation.
+            Let us help you achieve your dream of studying abroad in Europe.
           </motion.p>
 
           <motion.div

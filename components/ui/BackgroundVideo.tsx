@@ -9,7 +9,7 @@ interface BackgroundVideoProps {
 
 export default function BackgroundVideo({
   videoSrc = '/video/hero-bg.webm',
-  fallbackImage = 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80'
+  fallbackImage = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80'
 }: BackgroundVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [mounted, setMounted] = useState(false);
