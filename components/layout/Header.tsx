@@ -3,12 +3,34 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import Navigation from './Navigation';
+import Link from 'next/link';
+
+const navLinks = [
+  { href: '/#home', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/team', label: 'Team' },
+  { href: '/#contact', label: 'Contact' },
+  { href: '/#book-now', label: 'Book Now' },
+];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      const id = href.substring(2);
+      const element = document.getElementById(id);
+      if (element) {
+        const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <>
@@ -21,12 +43,26 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Navigation Trigger - Right */}
+          {/* Desktop Navigation Links - Hidden on Mobile */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleSmoothScroll(e, link.href)}
+                className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Mobile Navigation Trigger - Visible on Mobile Only */}
           <button
             onClick={toggleMenu}
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen}
-            className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
           >
             {isMenuOpen ? (
               <X className="w-6 h-6 text-gray-900" />
@@ -37,7 +73,7 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Navigation Menu */}
+      {/* Mobile Navigation Menu */}
       <Navigation isOpen={isMenuOpen} onClose={closeMenu} />
     </>
   );

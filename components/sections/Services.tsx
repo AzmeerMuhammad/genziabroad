@@ -1,38 +1,24 @@
 'use client';
 
-import { Briefcase, Users, TrendingUp, Globe, FileText, Lightbulb } from 'lucide-react';
+import { Briefcase, Users, TrendingUp, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const services = [
   {
     icon: Briefcase,
     title: 'University Admissions',
-    description: 'Expert guidance in selecting and securing admissions in top European universities that match your academic goals and career aspirations.',
-  },
-  {
-    icon: FileText,
-    title: 'Visa Processing',
-    description: 'Complete visa application support with document preparation, interview coaching, and follow-up to ensure smooth visa approval.',
-  },
-  {
-    icon: Globe,
-    title: 'Document Attestation',
-    description: 'Professional document attestation and verification services for all your educational certificates and required paperwork.',
+    description: 'Expert guidance in selecting and securing admissions in top European universities that match your academic goals.',
   },
   {
     icon: Users,
     title: 'Complete Package (No Accommodation)',
-    description: 'Full-service package covering admission, visa processing, and document handling - everything except accommodation arrangements.',
+    description: 'Full-service package covering admission, visa processing, and document handling - everything except accommodation.',
   },
   {
     icon: TrendingUp,
     title: 'Complete Package (With Accommodation)',
-    description: 'All-inclusive service including admission, visa, documents, and secure accommodation arrangements in your destination city.',
-  },
-  {
-    icon: Lightbulb,
-    title: 'University Transfer Service',
-    description: 'For international students already in Europe - assistance with changing universities and managing the transfer process seamlessly.',
+    description: 'All-inclusive service including admission, visa, documents, and secure accommodation in your destination city.',
   },
 ];
 
@@ -56,7 +42,7 @@ export default function Services() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -77,6 +63,23 @@ export default function Services() {
             );
           })}
         </div>
+
+        {/* Explore More Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center"
+        >
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all group"
+          >
+            Explore All Services
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

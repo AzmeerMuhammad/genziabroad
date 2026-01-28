@@ -4,7 +4,6 @@ import About from '@/components/sections/About';
 import Services from '@/components/sections/Services';
 import Testimonials from '@/components/sections/Testimonials';
 import Team from '@/components/sections/Team';
-import FAQ from '@/components/sections/FAQ';
 import Contact from '@/components/sections/Contact';
 import BookNow from '@/components/sections/BookNow';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
@@ -19,7 +18,6 @@ export default function Home() {
         <Services />
         <Testimonials />
         <Team />
-        <FAQ />
         <Contact />
         <BookNow />
       </main>

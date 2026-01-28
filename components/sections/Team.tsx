@@ -1,7 +1,8 @@
 'use client';
 
-import { Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Mail, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const teamMembers = [
   {
@@ -53,12 +54,12 @@ export default function Team() {
             Meet Our Team
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our diverse team of experts brings together decades of experience across
-            multiple industries and markets.
+            Our dedicated team of education consultants and experts are here to guide you
+            every step of the way to your European study destination.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
@@ -105,6 +106,23 @@ export default function Team() {
             </motion.div>
           ))}
         </div>
+
+        {/* Explore More Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center"
+        >
+          <Link
+            href="/team"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all group"
+          >
+            Meet the Full Team
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
