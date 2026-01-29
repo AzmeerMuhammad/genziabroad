@@ -35,7 +35,7 @@ export default function Testimonials() {
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80)' }}
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80)' }}
         />
       </div>
       <div className="container-custom relative z-10">

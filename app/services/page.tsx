@@ -93,7 +93,7 @@ export default function ServicesPage() {
   return (
     <main className="relative min-h-screen pt-24 pb-16 overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-[0.08]">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80)' }}

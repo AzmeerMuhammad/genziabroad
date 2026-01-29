@@ -24,8 +24,15 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="section-padding bg-white">
-      <div className="container-custom">
+    <section id="services" className="relative section-padding bg-white overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80)' }}
+        />
+      </div>
+      <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
