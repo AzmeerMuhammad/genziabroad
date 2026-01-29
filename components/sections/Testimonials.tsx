@@ -3,30 +3,7 @@
 import { Star, Quote, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-
-const testimonials = [
-  {
-    name: 'Ahmed Hassan',
-    role: 'Computer Science Student',
-    location: 'Munich, Germany',
-    rating: 5,
-    text: 'GenziAbroad made my dream come true! From admission to visa and finding accommodation in Munich, they handled everything professionally. Now I\'m studying at my dream university!',
-  },
-  {
-    name: 'Ayesha Malik',
-    role: 'Business Administration Student',
-    location: 'Amsterdam, Netherlands',
-    rating: 5,
-    text: 'The complete package with accommodation was worth every penny. They guided me through every step and even helped me settle in Amsterdam. Highly recommended!',
-  },
-  {
-    name: 'Ali Raza',
-    role: 'Engineering Student',
-    location: 'Berlin, Germany',
-    rating: 5,
-    text: 'I used their university transfer service when I wanted to switch universities. The process was smooth and stress-free. Great support throughout!',
-  },
-];
+import { testimonials, testimonialsSection, testimonialsExploreButtonText, backgroundImages } from '@/src/data/content';
 
 export default function Testimonials() {
   return (
@@ -35,7 +12,7 @@ export default function Testimonials() {
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80)' }}
+          style={{ backgroundImage: `url(${backgroundImages.testimonials})` }}
         />
       </div>
       <div className="container-custom relative z-10">
@@ -47,11 +24,10 @@ export default function Testimonials() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-gray-900 mb-4">
-            Student Success Stories
+            {testimonialsSection.title}
           </h2>
           <p className="text-lg font-sans text-gray-600 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our students have to say about
-            their experience with GenziAbroad.
+            {testimonialsSection.subtitle}
           </p>
         </motion.div>
 
@@ -105,7 +81,7 @@ export default function Testimonials() {
             className="inline-flex items-center gap-2 px-8 py-3 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all group hover:opacity-90"
             style={{ backgroundColor: '#051650' }}
           >
-            Read More Success Stories
+            {testimonialsExploreButtonText}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>

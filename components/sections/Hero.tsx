@@ -3,6 +3,7 @@
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import BackgroundVideo from '@/components/ui/BackgroundVideo';
+import { heroContent } from '@/src/data/content';
 
 export default function Hero() {
   const scrollToBooking = () => {
@@ -30,8 +31,8 @@ export default function Hero() {
           className="max-w-4xl mx-auto"
         >
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight text-white mb-6">
-            Your Gateway to
-            <span className="block">Study in Europe</span>
+            {heroContent.headline}
+            <span className="block">{heroContent.headlineHighlight}</span>
           </h1>
 
           <motion.p
@@ -40,8 +41,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="font-sans text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto"
           >
-            Complete student consultancy services from admission to accommodation.
-            Let us help you achieve your dream of studying abroad in Europe.
+            {heroContent.subheadline}
           </motion.p>
 
           <motion.div
@@ -53,7 +53,7 @@ export default function Hero() {
               onClick={scrollToBooking}
               className="inline-flex items-center gap-2 px-8 py-3 bg-[#051650] hover:bg-[#051650]/90 text-white font-medium rounded-md shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-4 focus:ring-gray-700"
             >
-              Book Your Consultation
+              {heroContent.buttonText}
               <ArrowRight className="w-5 h-5" />
             </button>
           </motion.div>

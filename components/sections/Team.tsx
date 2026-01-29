@@ -3,41 +3,7 @@
 import { Linkedin, Mail, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-
-const teamMembers = [
-  {
-    name: 'Ali Hassan',
-    role: 'Founder & CEO',
-    bio: 'With over 10 years of experience in international education consultancy, Ali has helped hundreds of students achieve their European study dreams.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
-    linkedin: '#',
-    email: 'ali@genziabroad.com',
-  },
-  {
-    name: 'Sarah Ahmed',
-    role: 'Admissions Specialist',
-    bio: 'Sarah specializes in European university admissions and has secured placements for students in top universities across Germany, Netherlands, and more.',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
-    linkedin: '#',
-    email: 'sarah@genziabroad.com',
-  },
-  {
-    name: 'Ahmed Malik',
-    role: 'Visa & Documentation Expert',
-    bio: 'Ahmed handles all visa processing and document attestation with a 98% success rate, ensuring smooth approvals for our students.',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
-    linkedin: '#',
-    email: 'ahmed@genziabroad.com',
-  },
-  {
-    name: 'Maria Weber',
-    role: 'Student Support Coordinator',
-    bio: 'Based in Europe, Maria assists students with accommodation, university transfers, and settling into their new life abroad.',
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop',
-    linkedin: '#',
-    email: 'maria@genziabroad.com',
-  },
-];
+import { teamMembers, teamSection, teamExploreButtonText, backgroundImages } from '@/src/data/content';
 
 export default function Team() {
   return (
@@ -46,7 +12,7 @@ export default function Team() {
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80)' }}
+          style={{ backgroundImage: `url(${backgroundImages.team})` }}
         />
       </div>
       <div className="container-custom relative z-10">
@@ -58,11 +24,10 @@ export default function Team() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-gray-900 mb-4">
-            Meet Our Team
+            {teamSection.title}
           </h2>
           <p className="text-lg font-sans text-gray-600 max-w-3xl mx-auto">
-            Our dedicated team of education consultants and experts are here to guide you
-            every step of the way to your European study destination.
+            {teamSection.subtitle}
           </p>
         </motion.div>
 
@@ -127,7 +92,7 @@ export default function Team() {
             className="inline-flex items-center gap-2 px-8 py-3 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all group hover:opacity-90"
             style={{ backgroundColor: '#051650' }}
           >
-            Meet the Full Team
+            {teamExploreButtonText}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>

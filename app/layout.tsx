@@ -29,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSerif.variable} ${poppins.variable}`}>
-      <body className={`${poppins.className} antialiased`}>
+    <html lang="en" className={`${dmSerif.variable} ${poppins.variable}`} suppressHydrationWarning>
+      <body className={`${poppins.className} antialiased`} suppressHydrationWarning>
         <ScrollToTop />
         {children}
         <Footer />

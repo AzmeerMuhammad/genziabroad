@@ -4,46 +4,19 @@ import { X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
 import Accordion from './Accordion';
+import {
+  faqsModal,
+  faqModalTitle,
+  faqModalFooterText,
+  faqModalContactButtonText,
+  faqModalWhatsappButtonText,
+  companyDetails
+} from '@/src/data/content';
 
 interface FAQModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
-
-const faqs = [
-  {
-    question: 'What countries do you cover?',
-    answer: 'We specialize in European countries including Germany, Netherlands, Sweden, Austria, France, Spain, Italy, Czech Republic, Poland, and more. We help you choose the best destination based on your program and budget.',
-  },
-  {
-    question: 'What\'s included in the Complete Package?',
-    answer: 'Our Complete Package includes university selection and application, document preparation and attestation, visa processing and interview coaching, pre-departure orientation, and optional accommodation arrangements. We guide you from start to finish.',
-  },
-  {
-    question: 'How long does the admission process take?',
-    answer: 'The timeline varies by country and university, but typically ranges from 3-6 months for the complete process from application to visa approval. We help you plan ahead to meet all deadlines.',
-  },
-  {
-    question: 'Can you help with university transfers?',
-    answer: 'Yes! Our University Transfer Service is designed for students already studying in Europe who want to change universities. We handle credit transfers, new applications, and visa updates.',
-  },
-  {
-    question: 'What documents do I need?',
-    answer: 'Typically you\'ll need academic transcripts, degree certificates, passport, financial documents, language proficiency test scores (IELTS/TOEFL), and recommendation letters. We provide a detailed checklist based on your target country.',
-  },
-  {
-    question: 'Do you charge for initial consultation?',
-    answer: 'No, your first consultation with us is completely free! We assess your profile, discuss your goals, and recommend the best path forward without any obligation.',
-  },
-  {
-    question: 'What are your service fees?',
-    answer: 'Our fees vary based on the service package you choose. Contact us for a detailed quote tailored to your needs. We offer transparent pricing with no hidden costs.',
-  },
-  {
-    question: 'Do you provide support after I reach Europe?',
-    answer: 'Absolutely! We provide post-arrival support including city orientation, university enrollment assistance, and ongoing student support. Our team in Europe is always available to help.',
-  },
-];
 
 export default function FAQModal({ isOpen, onClose }: FAQModalProps) {
   useEffect(() => {
@@ -82,7 +55,7 @@ export default function FAQModal({ isOpen, onClose }: FAQModalProps) {
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-100 shrink-0">
               <h2 className="font-serif text-xl text-gray-900">
-                Frequently Asked Questions
+                {faqModalTitle}
               </h2>
               <button
                 onClick={onClose}
@@ -95,13 +68,13 @@ export default function FAQModal({ isOpen, onClose }: FAQModalProps) {
 
             {/* Content */}
             <div className="flex-1 overflow-y-auto p-6">
-              <Accordion items={faqs} />
+              <Accordion items={faqsModal} />
             </div>
 
             {/* Footer */}
             <div className="p-6 border-t border-gray-100 bg-gray-50 shrink-0">
               <p className="font-sans text-center text-gray-600 mb-4">
-                Still have questions? We're here to help!
+                {faqModalFooterText}
               </p>
               <div className="flex flex-col gap-3">
                 <a
@@ -110,15 +83,15 @@ export default function FAQModal({ isOpen, onClose }: FAQModalProps) {
                   className="px-6 py-2.5 text-white font-medium rounded-md transition-colors text-center hover:opacity-90"
                   style={{ backgroundColor: '#051650' }}
                 >
-                  Contact Us
+                  {faqModalContactButtonText}
                 </a>
                 <a
-                  href="https://wa.me/923001234567?text=Hello!%20I%20have%20a%20question."
+                  href={companyDetails.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-2.5 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md transition-colors text-center"
                 >
-                  WhatsApp Us
+                  {faqModalWhatsappButtonText}
                 </a>
               </div>
             </div>

@@ -4,14 +4,7 @@ import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import Navigation from './Navigation';
 import Link from 'next/link';
-
-const navLinks = [
-  { href: '/#services', label: 'Services' },
-  { href: '/#testimonials', label: 'Testimonials' },
-  { href: '/#team', label: 'Team' },
-  { href: '/#contact', label: 'Contact' },
-  { href: '/#book-now', label: 'Book Now' },
-];
+import { navLinks, companyDetails } from '@/src/data/content';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,7 +37,7 @@ export default function Header() {
           {/* Logo Placeholder - Top Left */}
           <Link href="/" className="flex items-center">
             <div className="flex items-center justify-center w-40 h-10 md:w-48 md:h-12 border-2 border-dashed border-gray-300 rounded-md hover:border-gray-400 transition-colors cursor-pointer">
-              <span className="text-xs md:text-sm text-gray-500 font-medium">LOGO HERE</span>
+              <span className="text-xs md:text-sm text-gray-500 font-medium">{companyDetails.logoPlaceholder}</span>
             </div>
           </Link>
 

@@ -3,20 +3,12 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { mobileNavLinks } from '@/src/data/content';
 
 interface NavigationProps {
   isOpen: boolean;
   onClose: () => void;
 }
-
-const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Team', href: '#team' },
-  { label: 'Contact', href: '#contact' },
-  { label: 'Book Now', href: '#book-now' },
-];
 
 export default function Navigation({ isOpen, onClose }: NavigationProps) {
   // Lock body scroll when menu is open
@@ -86,7 +78,7 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
               {/* Navigation Links */}
               <div className="flex-1 overflow-y-auto py-8">
                 <ul className="space-y-2 px-6">
-                  {navLinks.map((link, index) => (
+                  {mobileNavLinks.map((link, index) => (
                     <motion.li
                       key={link.href}
                       initial={{ opacity: 0, x: 20 }}

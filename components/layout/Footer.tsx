@@ -1,35 +1,15 @@
 'use client';
 
-import { Facebook, Youtube, Instagram, Twitter, Linkedin } from 'lucide-react';
-import Link from 'next/link';
+import { Facebook, Youtube, Instagram, Twitter, Linkedin, LucideIcon } from 'lucide-react';
+import { socialLinks, companyDetails } from '@/src/data/content';
 
-const socialLinks = [
-  {
-    name: 'Facebook',
-    icon: Facebook,
-    href: '#', // User will provide the actual link
-  },
-  {
-    name: 'YouTube',
-    icon: Youtube,
-    href: '#', // User will provide the actual link
-  },
-  {
-    name: 'Instagram',
-    icon: Instagram,
-    href: '#', // User will provide the actual link
-  },
-  {
-    name: 'Twitter',
-    icon: Twitter,
-    href: '#', // User will provide the actual link
-  },
-  {
-    name: 'LinkedIn',
-    icon: Linkedin,
-    href: '#', // User will provide the actual link
-  },
-];
+const iconMap: Record<string, LucideIcon> = {
+  Facebook,
+  Youtube,
+  Instagram,
+  Twitter,
+  Linkedin,
+};
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -41,14 +21,14 @@ export default function Footer() {
           {/* Copyright */}
           <div className="text-center md:text-left">
             <p className="font-sans text-gray-300">
-              © {currentYear} GenziAbroad. All rights reserved.
+              © {currentYear} {companyDetails.name}. All rights reserved.
             </p>
           </div>
 
           {/* Social Media Icons */}
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => {
-              const Icon = social.icon;
+              const Icon = iconMap[social.iconName];
               return (
                 <a
                   key={social.name}

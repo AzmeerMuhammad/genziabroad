@@ -1,94 +1,19 @@
 'use client';
 
-import { Briefcase, Users, TrendingUp, Globe, FileText, Lightbulb, CheckCircle, ArrowLeft } from 'lucide-react';
+import { Briefcase, Users, TrendingUp, Globe, FileText, Lightbulb, CheckCircle, ArrowLeft, LucideIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
+import { servicesDetailed, servicesPageSection, servicesPageCTA, commonButtons, backgroundImages } from '@/src/data/content';
 
-const services = [
-  {
-    icon: Briefcase,
-    title: 'University Admissions',
-    description: 'Expert guidance in selecting and securing admissions in top European universities that match your academic goals and career aspirations.',
-    details: [
-      'Personalized university selection based on your profile and goals',
-      'Application strategy and timeline planning',
-      'Statement of Purpose (SOP) and essay guidance',
-      'Document preparation and verification',
-      'Application submission and tracking',
-      'Acceptance negotiation and offer evaluation',
-    ],
-  },
-  {
-    icon: FileText,
-    title: 'Visa Processing',
-    description: 'Complete visa application support with document preparation, interview coaching, and follow-up to ensure smooth visa approval.',
-    details: [
-      'Comprehensive visa consultation and requirements analysis',
-      'Document checklist and preparation assistance',
-      'Visa application form completion',
-      'Financial documentation guidance',
-      'Interview preparation and mock sessions',
-      'Embassy submission and follow-up support',
-      'Post-approval travel guidance',
-    ],
-  },
-  {
-    icon: Globe,
-    title: 'Document Attestation',
-    description: 'Professional document attestation and verification services for all your educational certificates and required paperwork.',
-    details: [
-      'Educational certificate attestation (HEC, MOFA)',
-      'Birth certificate and family documents',
-      'Police clearance certificate assistance',
-      'Medical certificate verification',
-      'Translation services for non-English documents',
-      'Apostille services where required',
-    ],
-  },
-  {
-    icon: Users,
-    title: 'Complete Package (No Accommodation)',
-    description: 'Full-service package covering admission, visa processing, and document handling - everything except accommodation arrangements.',
-    details: [
-      'All services from University Admissions package',
-      'Complete visa processing and support',
-      'Full document attestation services',
-      'Pre-departure orientation sessions',
-      'Airport and travel guidance',
-      'Student support helpline',
-      'Post-arrival city orientation (virtual)',
-    ],
-  },
-  {
-    icon: TrendingUp,
-    title: 'Complete Package (With Accommodation)',
-    description: 'All-inclusive service including admission, visa, documents, and secure accommodation arrangements in your destination city.',
-    details: [
-      'Everything included in Complete Package (No Accommodation)',
-      'Student housing research and recommendations',
-      'Accommodation booking assistance',
-      'Lease agreement review and guidance',
-      'Landlord communication support',
-      'Move-in coordination and checklist',
-      'Housing troubleshooting for first 3 months',
-    ],
-  },
-  {
-    icon: Lightbulb,
-    title: 'University Transfer Service',
-    description: 'For international students already in Europe - assistance with changing universities and managing the transfer process seamlessly.',
-    details: [
-      'Transfer eligibility assessment',
-      'Credit transfer and course equivalency evaluation',
-      'New university selection and application',
-      'Visa extension or transfer support',
-      'Document verification for transfer',
-      'Communication with current and new institutions',
-      'Residence permit update guidance',
-    ],
-  },
-];
+const iconMap: Record<string, LucideIcon> = {
+  Briefcase,
+  Users,
+  TrendingUp,
+  Globe,
+  FileText,
+  Lightbulb,
+};
 
 export default function ServicesPage() {
   return (
@@ -99,7 +24,7 @@ export default function ServicesPage() {
       <div className="absolute inset-0 opacity-[0.08]">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80)' }}
+          style={{ backgroundImage: `url(${backgroundImages.pages})` }}
         />
       </div>
       <div className="container-custom px-4 md:px-8 relative z-10">
@@ -115,7 +40,7 @@ export default function ServicesPage() {
             className="inline-flex items-center gap-2 text-gray-600 hover:text-primary-600 font-medium transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
-            Back to Home
+            {commonButtons.backToHome}
           </Link>
         </motion.div>
 
@@ -127,18 +52,17 @@ export default function ServicesPage() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-gray-900 mb-6">
-            Our Services
+            {servicesPageSection.title}
           </h1>
           <p className="text-lg md:text-xl font-sans text-gray-600 max-w-3xl mx-auto">
-            Comprehensive student support services designed to make your study abroad journey
-            smooth, stress-free, and successful from start to finish.
+            {servicesPageSection.subtitle}
           </p>
         </motion.div>
 
         {/* Services Grid */}
         <div className="space-y-12">
-          {services.map((service) => {
-            const Icon = service.icon;
+          {servicesDetailed.map((service) => {
+            const Icon = iconMap[service.iconName];
             return (
               <motion.div
                 key={service.title}
@@ -190,17 +114,17 @@ export default function ServicesPage() {
           className="mt-16 text-center bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8 md:p-12"
         >
           <h2 className="text-2xl md:text-3xl font-bold font-serif text-gray-900 mb-4">
-            Ready to Start Your Journey?
+            {servicesPageCTA.title}
           </h2>
           <p className="text-lg font-sans text-gray-600 mb-8 max-w-2xl mx-auto">
-            Book a free consultation to discuss which service package is right for you
+            {servicesPageCTA.subtitle}
           </p>
           <Link
             href="/#book-now"
             className="inline-block px-8 py-4 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all hover:opacity-90"
             style={{ backgroundColor: '#051650' }}
           >
-            Book Your Consultation
+            {servicesPageCTA.buttonText}
           </Link>
         </motion.div>
       </div>

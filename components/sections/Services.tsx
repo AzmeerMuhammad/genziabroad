@@ -1,26 +1,15 @@
 'use client';
 
-import { Briefcase, Users, TrendingUp, ArrowRight } from 'lucide-react';
+import { Briefcase, Users, TrendingUp, ArrowRight, LucideIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { services, servicesSection, servicesExploreButtonText, backgroundImages } from '@/src/data/content';
 
-const services = [
-  {
-    icon: Briefcase,
-    title: 'University Admissions',
-    description: 'Expert guidance in selecting and securing admissions in top European universities that match your academic goals.',
-  },
-  {
-    icon: Users,
-    title: 'Complete Package (No Accommodation)',
-    description: 'Full-service package covering admission, visa processing, and document handling - everything except accommodation.',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Complete Package (With Accommodation)',
-    description: 'All-inclusive service including admission, visa, documents, and secure accommodation in your destination city.',
-  },
-];
+const iconMap: Record<string, LucideIcon> = {
+  Briefcase,
+  Users,
+  TrendingUp,
+};
 
 export default function Services() {
   return (
@@ -29,7 +18,7 @@ export default function Services() {
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80)' }}
+          style={{ backgroundImage: `url(${backgroundImages.services})` }}
         />
       </div>
       <div className="container-custom relative z-10">
@@ -41,17 +30,16 @@ export default function Services() {
           className="text-center mb-16"
         >
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-4">
-            Our Services
+            {servicesSection.title}
           </h2>
           <p className="font-sans text-lg text-gray-600 max-w-3xl mx-auto">
-            Comprehensive student support services designed to make your study abroad journey
-            smooth, stress-free, and successful from start to finish.
+            {servicesSection.subtitle}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => {
-            const Icon = service.icon;
+            const Icon = iconMap[service.iconName];
             return (
               <motion.div
                 key={service.title}
@@ -84,7 +72,7 @@ export default function Services() {
             className="inline-flex items-center gap-2 px-8 py-3 text-white font-medium rounded-md shadow-lg hover:shadow-xl transition-all group hover:opacity-90"
             style={{ backgroundColor: '#051650' }}
           >
-            Explore All Services
+            {servicesExploreButtonText}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
