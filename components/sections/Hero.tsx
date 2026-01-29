@@ -51,7 +51,7 @@ export default function Hero() {
           >
             <button
               onClick={scrollToBooking}
-              className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-4 focus:ring-gray-700"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-[#051650] hover:bg-[#051650]/90 text-white font-medium rounded-md shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-4 focus:ring-gray-700"
             >
               Book Your Consultation
               <ArrowRight className="w-5 h-5" />

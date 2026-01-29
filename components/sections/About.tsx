@@ -60,8 +60,8 @@ export default function About() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="bg-white border border-gray-100 shadow-lg shadow-gray-200/50 p-8 rounded-xl hover:-translate-y-1 transition-transform"
               >
-                <div className="flex items-center justify-center w-14 h-14 bg-blue-50 rounded-lg mb-6">
-                  <Icon className="w-7 h-7 text-blue-600" />
+                <div className="flex items-center justify-center w-14 h-14 rounded-lg mb-6" style={{ backgroundColor: '#e6e9f0' }}>
+                  <Icon className="w-7 h-7" style={{ color: '#051650' }} />
                 </div>
                 <h3 className="text-xl font-semibold font-serif text-gray-900 mb-3">{value.title}</h3>
                 <p className="font-sans text-gray-600 leading-relaxed">{value.description}</p>

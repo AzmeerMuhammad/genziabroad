@@ -61,8 +61,8 @@ export default function Services() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white p-6 border border-gray-100 rounded-lg shadow-lg shadow-gray-200/50 hover:-translate-y-1 transition-transform"
               >
-                <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-md mb-4">
-                  <Icon className="w-6 h-6 text-blue-600" />
+                <div className="flex items-center justify-center w-12 h-12 rounded-md mb-4" style={{ backgroundColor: '#e6e9f0' }}>
+                  <Icon className="w-6 h-6" style={{ color: '#051650' }} />
                 </div>
                 <h3 className="font-sans text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
                 <p className="font-sans text-gray-600 leading-relaxed">{service.description}</p>
@@ -81,7 +81,8 @@ export default function Services() {
         >
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md shadow-lg hover:shadow-xl transition-all group"
+            className="inline-flex items-center gap-2 px-8 py-3 text-white font-medium rounded-md shadow-lg hover:shadow-xl transition-all group hover:opacity-90"
+            style={{ backgroundColor: '#051650' }}
           >
             Explore All Services
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

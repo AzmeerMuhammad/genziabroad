@@ -13,8 +13,8 @@ const contactInfo = [
   {
     icon: Phone,
     label: 'Phone',
-    value: '+49 177 1821922',
-    href: 'tel:+923001234567',
+    value: '+49 176 16986058',
+    href: 'tel:+49 176 16986058',
   },
   {
     icon: MapPin,
@@ -106,7 +106,7 @@ export default function Contact() {
                 Message us on WhatsApp for instant answers about admissions and services
               </p>
               <a
-                href="https://wa.me/923001234567?text=Hello!%20I%20would%20like%20to%20book%20a%20consultation."
+                href="https://wa.me/4917616986058?text=Hello!%20I%20would%20like%20to%20book%20a%20consultation."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-4 focus:ring-green-300"

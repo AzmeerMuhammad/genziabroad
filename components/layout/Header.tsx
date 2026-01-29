@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import Navigation from './Navigation';
 import Link from 'next/link';
 
@@ -57,8 +57,13 @@ export default function Header() {
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={
                   link.label === 'Book Now'
-                    ? "px-6 py-2 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md transition-colors"
+                    ? "px-6 py-2 text-white font-medium rounded-md transition-colors hover:opacity-90"
                     : "text-gray-900 hover:text-gray-700 font-medium transition-colors"
+                }
+                style={
+                  link.label === 'Book Now'
+                    ? { backgroundColor: '#051650' }
+                    : undefined
                 }
               >
                 {link.label}
@@ -69,15 +74,11 @@ export default function Header() {
           {/* Mobile Navigation Trigger - Visible on Mobile Only */}
           <button
             onClick={toggleMenu}
-            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-label="Open menu"
             aria-expanded={isMenuOpen}
             className="md:hidden flex items-center justify-center w-10 h-10 rounded-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-900"
           >
-            {isMenuOpen ? (
-              <X className="w-6 h-6 text-gray-900" />
-            ) : (
-              <Menu className="w-6 h-6 text-gray-900" />
-            )}
+            <Menu className="w-6 h-6 text-gray-900" />
           </button>
         </div>
       </header>

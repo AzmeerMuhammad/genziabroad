@@ -3,6 +3,7 @@
 import { Star, Quote, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Header from '@/components/layout/Header';
 
 const testimonials = [
   {
@@ -105,7 +106,9 @@ const testimonials = [
 
 export default function TestimonialsPage() {
   return (
-    <main className="relative min-h-screen pt-24 pb-16 overflow-hidden">
+    <>
+      <Header />
+      <main className="relative min-h-screen pt-24 pb-16 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 opacity-[0.08]">
         <div
@@ -118,7 +121,7 @@ export default function TestimonialsPage() {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.25 }}
           className="mb-8"
         >
           <Link
@@ -134,7 +137,7 @@ export default function TestimonialsPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-gray-900 mb-6">
@@ -148,13 +151,13 @@ export default function TestimonialsPage() {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <motion.div
               key={testimonial.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.6, delay: index * 0.05 }}
+              transition={{ duration: 0.3 }}
               className="bg-white border border-gray-100 shadow-lg shadow-gray-200/50 rounded-xl p-6 hover:-translate-y-1 transition-transform"
             >
               {/* Quote Icon */}
@@ -196,7 +199,7 @@ export default function TestimonialsPage() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-center bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8 md:p-12"
         >
           <h2 className="text-2xl md:text-3xl font-bold font-serif text-gray-900 mb-4">
@@ -207,12 +210,14 @@ export default function TestimonialsPage() {
           </p>
           <Link
             href="/#book-now"
-            className="inline-block px-8 py-4 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all"
+            className="inline-block px-8 py-4 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all hover:opacity-90"
+            style={{ backgroundColor: '#051650' }}
           >
-            Book Your Free Consultation
+            Book Your Consultation
           </Link>
         </motion.div>
       </div>
     </main>
+    </>
   );
 }

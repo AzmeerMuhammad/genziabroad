@@ -3,6 +3,7 @@
 import { Linkedin, Mail, GraduationCap, Award, Globe2, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Header from '@/components/layout/Header';
 
 const teamMembers = [
   {
@@ -105,7 +106,9 @@ const teamMembers = [
 
 export default function TeamPage() {
   return (
-    <main className="relative min-h-screen pt-24 pb-16 overflow-hidden">
+    <>
+      <Header />
+      <main className="relative min-h-screen pt-24 pb-16 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 opacity-[0.08]">
         <div
@@ -118,7 +121,7 @@ export default function TeamPage() {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.25 }}
           className="mb-8"
         >
           <Link
@@ -134,7 +137,7 @@ export default function TeamPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-gray-900 mb-6">
@@ -148,13 +151,13 @@ export default function TeamPage() {
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {teamMembers.map((member, index) => (
+          {teamMembers.map((member) => (
             <motion.div
               key={member.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.6, delay: index * 0.05 }}
+              transition={{ duration: 0.3 }}
               className="bg-white border border-gray-100 shadow-lg shadow-gray-200/50 rounded-xl overflow-hidden hover:-translate-y-1 transition-transform"
             >
               {/* Photo */}
@@ -194,15 +197,15 @@ export default function TeamPage() {
                 {/* Details */}
                 <div className="space-y-2 mb-4">
                   <div className="flex items-start gap-2">
-                    <GraduationCap className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <GraduationCap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#051650' }} />
                     <span className="text-xs font-sans text-gray-600">{member.qualifications}</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Globe2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <Globe2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#051650' }} />
                     <span className="text-xs font-sans text-gray-600">{member.specialization}</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Award className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <Award className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#051650' }} />
                     <span className="text-xs font-sans text-gray-600">{member.experience} experience</span>
                   </div>
                 </div>
@@ -229,7 +232,7 @@ export default function TeamPage() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-center bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8 md:p-12"
         >
           <h2 className="text-2xl md:text-3xl font-bold font-serif text-gray-900 mb-4">
@@ -240,12 +243,14 @@ export default function TeamPage() {
           </p>
           <Link
             href="/#book-now"
-            className="inline-block px-8 py-4 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all"
+            className="inline-block px-8 py-4 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all hover:opacity-90"
+            style={{ backgroundColor: '#051650' }}
           >
-            Book a Consultation
+            Book Your Consultation
           </Link>
         </motion.div>
       </div>
     </main>
+    </>
   );
 }

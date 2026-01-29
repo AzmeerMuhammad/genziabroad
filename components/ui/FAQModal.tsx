@@ -66,34 +66,30 @@ export default function FAQModal({ isOpen, onClose }: FAQModalProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
             onClick={onClose}
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
           />
 
-          {/* Modal */}
+          {/* Sidebar */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, x: "-50%", y: "-50%" }}
-            animate={{ opacity: 1, scale: 1, x: "-50%", y: "-50%" }}
-            exit={{ opacity: 0, scale: 0.95, x: "-50%", y: "-50%" }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed left-1/2 top-1/2 w-[90vw] max-w-3xl max-h-[85vh] bg-white rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
+            className="fixed top-0 right-0 bottom-0 w-full max-w-lg bg-white shadow-2xl z-50 flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="flex items-start justify-between p-6 border-b border-gray-100 shrink-0">
-              <div className="flex-1 pr-4">
-                <h2 className="font-serif text-2xl md:text-3xl text-gray-900">
-                  Frequently Asked Questions
-                </h2>
-                <p className="font-sans text-gray-600 mt-1">
-                  Find answers to common questions about our services
-                </p>
-              </div>
+            <div className="flex items-center justify-between p-6 border-b border-gray-100 shrink-0">
+              <h2 className="font-serif text-xl text-gray-900">
+                Frequently Asked Questions
+              </h2>
               <button
                 onClick={onClose}
-                className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors flex-shrink-0"
+                className="flex items-center justify-center w-10 h-10 rounded-md hover:bg-gray-100 transition-colors"
                 aria-label="Close FAQs"
               >
-                <X className="w-6 h-6 text-gray-500" />
+                <X className="w-6 h-6 text-gray-900" />
               </button>
             </div>
 
@@ -103,15 +99,16 @@ export default function FAQModal({ isOpen, onClose }: FAQModalProps) {
             </div>
 
             {/* Footer */}
-            <div className="p-6 border-t border-gray-100 bg-gray-50 rounded-b-2xl shrink-0">
+            <div className="p-6 border-t border-gray-100 bg-gray-50 shrink-0">
               <p className="font-sans text-center text-gray-600 mb-4">
                 Still have questions? We're here to help!
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <div className="flex flex-col gap-3">
                 <a
                   href="/#contact"
                   onClick={onClose}
-                  className="px-6 py-2.5 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md transition-colors text-center"
+                  className="px-6 py-2.5 text-white font-medium rounded-md transition-colors text-center hover:opacity-90"
+                  style={{ backgroundColor: '#051650' }}
                 >
                   Contact Us
                 </a>

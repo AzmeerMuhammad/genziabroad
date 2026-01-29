@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { X } from 'lucide-react';
 
 interface NavigationProps {
   isOpen: boolean;
@@ -13,7 +14,6 @@ const navLinks = [
   { label: 'Services', href: '#services' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Team', href: '#team' },
-  { label: 'FAQs', href: '#faq' },
   { label: 'Contact', href: '#contact' },
   { label: 'Book Now', href: '#book-now' },
 ];
@@ -74,6 +74,13 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
               {/* Menu Header */}
               <div className="flex items-center justify-between h-16 md:h-20 px-6 border-b border-gray-100">
                 <h2 className="font-serif text-lg text-gray-900">Menu</h2>
+                <button
+                  onClick={onClose}
+                  aria-label="Close menu"
+                  className="flex items-center justify-center w-10 h-10 rounded-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-900"
+                >
+                  <X className="w-6 h-6 text-gray-900" />
+                </button>
               </div>
 
               {/* Navigation Links */}

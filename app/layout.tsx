@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { DM_Serif_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import FloatingFAQButton from "@/components/ui/FloatingFAQButton";
+import Footer from "@/components/layout/Footer";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const dmSerif = DM_Serif_Display({
   weight: ['400'],
@@ -29,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSerif.variable} ${poppins.variable}`}>
       <body className={`${poppins.className} antialiased`}>
+        <ScrollToTop />
         {children}
+        <Footer />
         <FloatingFAQButton />
       </body>
     </html>

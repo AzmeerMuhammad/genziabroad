@@ -124,7 +124,8 @@ export default function Team() {
         >
           <Link
             href="/team"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 hover:bg-gray-700 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all group"
+            className="inline-flex items-center gap-2 px-8 py-3 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all group hover:opacity-90"
+            style={{ backgroundColor: '#051650' }}
           >
             Meet the Full Team
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

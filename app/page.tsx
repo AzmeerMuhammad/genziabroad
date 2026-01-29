@@ -22,7 +22,7 @@ export default function Home() {
         <BookNow />
       </main>
       <WhatsAppButton
-        phoneNumber="+49 177 1821922"
+        phoneNumber="+4917616986058"
         message="Hello! I would like to book a consultation."
       />
     </>
