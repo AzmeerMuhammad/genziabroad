@@ -144,6 +144,7 @@ export const companyDetails: CompanyDetails = {
 // ============================================================================
 
 export const navLinks: NavLink[] = [
+  { href: '/#about', label: 'About' },
   { href: '/#services', label: 'Services' },
   { href: '/#testimonials', label: 'Testimonials' },
   { href: '/#team', label: 'Team' },
@@ -808,11 +809,15 @@ export const commonButtons = {
 // ============================================================================
 
 export const backgroundImages = {
+  // Homepage section backgrounds
   services: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80',
   about: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80',
   testimonials: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80',
   team: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80',
   contact: 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80',
   faq: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80',
-  pages: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80',
+  // Page hero backgrounds (unique for each page)
+  servicesPage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=80', // Students in library/study space
+  testimonialsPage: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=80', // Happy diverse students
+  teamPage: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80', // Professional team meeting
 };
