@@ -4,6 +4,7 @@ import { Briefcase, Users, TrendingUp, Globe, FileText, Lightbulb, CheckCircle, 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
+import HeroBackground from '@/components/ui/HeroBackground';
 import { servicesDetailed, servicesPageSection, servicesPageCTA, commonButtons, backgroundImages } from '@/src/data/content';
 
 const iconMap: Record<string, LucideIcon> = {
@@ -23,13 +24,7 @@ export default function ServicesPage() {
         {/* Hero Section with Background */}
         <section className="relative pt-24 pb-20 overflow-hidden">
           {/* Background Image with Dark Overlay */}
-          <div className="absolute inset-0">
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${backgroundImages.servicesPage})` }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-white" />
-          </div>
+          <HeroBackground imageSrc={backgroundImages.servicesPage} alt="Services background" />
 
           <div className="container-custom px-4 md:px-8 relative z-10">
             {/* Back Button */}

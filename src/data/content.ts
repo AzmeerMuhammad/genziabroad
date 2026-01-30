@@ -340,6 +340,61 @@ export const values: ValueItem[] = [
   },
 ];
 
+export const aboutExploreButtonText = 'Learn More About Us';
+
+// ============================================================================
+// ABOUT PAGE (Detailed)
+// ============================================================================
+
+export const aboutPageSection: SectionContent = {
+  title: 'About GenziAbroad',
+  subtitle: "Pakistan's trusted student consultancy firm, helping students achieve their European education dreams since 2018.",
+};
+
+export const aboutStory = {
+  title: 'Our Story',
+  paragraphs: [
+    'GenziAbroad was founded with a simple mission: to make European education accessible to Pakistani students. What started as a small consultancy in Karachi has grown into a trusted partner for hundreds of students pursuing their academic dreams abroad.',
+    'Our founder, having experienced the challenges of navigating the European education system firsthand, understood the need for comprehensive, transparent, and student-centered guidance. This experience shaped GenziAbroad into what it is today - a consultancy that treats every student like family.',
+    'Over the years, we have built strong relationships with universities across Europe, developed expertise in visa processing and documentation, and created a support system that extends from the first consultation to well after students arrive at their destination.',
+  ],
+};
+
+export const aboutStats = [
+  { number: '500+', label: 'Students Placed' },
+  { number: '50+', label: 'Partner Universities' },
+  { number: '98%', label: 'Visa Success Rate' },
+  { number: '15+', label: 'European Countries' },
+];
+
+export const aboutWhyChooseUs = {
+  title: 'Why Choose GenziAbroad?',
+  reasons: [
+    {
+      title: 'End-to-End Support',
+      description: 'From university selection to post-arrival assistance, we handle every aspect of your study abroad journey.',
+    },
+    {
+      title: 'Transparent Process',
+      description: 'No hidden fees, no false promises. We provide honest guidance and realistic expectations throughout.',
+    },
+    {
+      title: 'Expert Team',
+      description: 'Our team includes education consultants, visa experts, and on-ground support staff across Europe.',
+    },
+    {
+      title: 'Proven Track Record',
+      description: 'With a 98% visa success rate and 500+ successful placements, our results speak for themselves.',
+    },
+  ],
+};
+
+export const aboutPageCTA: CTAContent = {
+  title: 'Ready to Start Your Journey?',
+  subtitle: 'Book a free consultation and let us help you achieve your European education dream',
+  buttonText: 'Book Your Consultation',
+};
+
 // ============================================================================
 // TESTIMONIALS (Homepage - 3 items)
 // ============================================================================
@@ -820,4 +875,5 @@ export const backgroundImages = {
   servicesPage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=80', // Students in library/study space
   testimonialsPage: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=80', // Happy diverse students
   teamPage: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80', // Professional team meeting
+  aboutPage: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&q=80', // Team collaboration/office culture
 };

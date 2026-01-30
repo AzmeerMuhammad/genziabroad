@@ -4,6 +4,7 @@ import { Linkedin, Mail, GraduationCap, Award, Globe2, ArrowLeft } from 'lucide-
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
+import HeroBackground from '@/components/ui/HeroBackground';
 import { teamMembersDetailed, teamPageSection, teamPageCTA, commonButtons, backgroundImages } from '@/src/data/content';
 
 export default function TeamPage() {
@@ -14,13 +15,7 @@ export default function TeamPage() {
         {/* Hero Section with Background */}
         <section className="relative pt-24 pb-20 overflow-hidden">
           {/* Background Image with Dark Overlay */}
-          <div className="absolute inset-0">
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${backgroundImages.teamPage})` }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-white" />
-          </div>
+          <HeroBackground imageSrc={backgroundImages.teamPage} alt="Team background" />
 
           <div className="container-custom px-4 md:px-8 relative z-10">
             {/* Back Button */}

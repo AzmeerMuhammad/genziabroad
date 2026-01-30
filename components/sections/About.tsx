@@ -1,8 +1,9 @@
 'use client';
 
-import { Target, Heart, Award, LucideIcon } from 'lucide-react';
+import { Target, Heart, Award, LucideIcon, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { values, aboutSection, backgroundImages } from '@/src/data/content';
+import Link from 'next/link';
+import { values, aboutSection, backgroundImages, aboutExploreButtonText } from '@/src/data/content';
 
 const iconMap: Record<string, LucideIcon> = {
   Target,
@@ -57,6 +58,24 @@ export default function About() {
             );
           })}
         </div>
+
+        {/* Learn More Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-12"
+        >
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-lg transition-all duration-300 hover:gap-4"
+            style={{ backgroundColor: '#051650' }}
+          >
+            {aboutExploreButtonText}
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
