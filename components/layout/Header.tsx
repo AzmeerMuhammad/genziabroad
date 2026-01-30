@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import Navigation from './Navigation';
 import Link from 'next/link';
-import { navLinks, companyDetails } from '@/src/data/content';
+import Image from 'next/image';
+import { navLinks } from '@/src/data/content';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,11 +35,19 @@ export default function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="container-custom flex items-center justify-between h-16 md:h-20 px-4 md:px-8">
-          {/* Logo Placeholder - Top Left */}
+          {/* Logo - Top Left */}
           <Link href="/" className="flex items-center">
-            <div className="flex items-center justify-center w-40 h-10 md:w-48 md:h-12 border-2 border-dashed border-gray-300 rounded-md hover:border-gray-400 transition-colors cursor-pointer">
-              <span className="text-xs md:text-sm text-gray-500 font-medium">{companyDetails.logoPlaceholder}</span>
-            </div>
+            <Image
+            src="/images/logo.png"
+            alt="GenziAbroad"
+            // 1. Increase these so the source quality stays sharp
+            width={300} 
+            height={75} 
+            // 2. h-14 (56px) on mobile and h-20 (80px) on desktop
+            // 3. 'translate-y-1' pushes it down slightly to center it visually
+            className="h-16 md:h-28 w-auto object-contain transform translate-y-1"
+            priority
+          />
           </Link>
 
           {/* Desktop Navigation Links - Hidden on Mobile */}

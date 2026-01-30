@@ -67,8 +67,16 @@ export default function AboutPage() {
         </section>
 
         {/* About Content */}
-        <section className="py-16 bg-gray-50">
-          <div className="container-custom px-4 md:px-8">
+        <section className="relative py-16 bg-white overflow-hidden">
+          {/* Subtle Background Image */}
+          <div className="absolute inset-0 opacity-5">
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${backgroundImages.aboutPage})` }}
+            />
+          </div>
+
+          <div className="container-custom px-4 md:px-8 relative z-10">
             {/* Our Story Section */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -148,7 +156,7 @@ export default function AboutPage() {
               className="mb-12"
             >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {values.map((value, index) => {
+                {values.map((value) => {
                   const Icon = iconMap[value.iconName];
                   return (
                     <div

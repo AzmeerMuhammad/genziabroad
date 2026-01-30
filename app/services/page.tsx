@@ -61,8 +61,16 @@ export default function ServicesPage() {
         </section>
 
         {/* Services Content */}
-        <section className="py-16 bg-gray-50">
-          <div className="container-custom px-4 md:px-8">
+        <section className="relative py-16 bg-white overflow-hidden">
+          {/* Subtle Background Image */}
+          <div className="absolute inset-0 opacity-5">
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${backgroundImages.servicesPage})` }}
+            />
+          </div>
+
+          <div className="container-custom px-4 md:px-8 relative z-10">
             {/* Services Grid */}
             <div className="space-y-12">
               {servicesDetailed.map((service) => {
