@@ -27,7 +27,14 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
   const handleLinkClick = (href: string) => {
     onClose();
 
-    // Smooth scroll to section
+    // Check if we're on the home page
+    if (window.location.pathname !== '/') {
+      // Navigate to home page with the anchor
+      window.location.href = '/' + href;
+      return;
+    }
+
+    // We're on home page, do smooth scroll to section
     setTimeout(() => {
       const element = document.querySelector(href);
       if (element) {
