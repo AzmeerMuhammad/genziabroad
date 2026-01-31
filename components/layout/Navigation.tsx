@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { mobileNavLinks } from '@/src/data/content';
@@ -11,6 +12,9 @@ interface NavigationProps {
 }
 
 export default function Navigation({ isOpen, onClose }: NavigationProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+
   // Lock body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
@@ -27,16 +31,18 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
   const handleLinkClick = (href: string) => {
     onClose();
 
-    // Check if we're on the home page
-    if (window.location.pathname !== '/') {
-      // Navigate to home page with the anchor
-      window.location.href = '/' + href;
+    const isHomePage = pathname === '/';
+    const sectionId = href.replace('#', '');
+
+    if (!isHomePage) {
+      // Use Next.js router for fast client-side navigation
+      router.push('/' + href);
       return;
     }
 
     // We're on home page, do smooth scroll to section
     setTimeout(() => {
-      const element = document.querySelector(href);
+      const element = document.getElementById(sectionId);
       if (element) {
         const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 80;
         window.scrollTo({
