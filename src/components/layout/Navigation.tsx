@@ -24,10 +24,20 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
     };
   }, [isOpen]);
 
-  const handleLinkClick = (href: string) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Check if we're on the home page (handle trailing slash)
+    const isHomePage = window.location.pathname === '/' || window.location.pathname === '';
+
+    if (!isHomePage) {
+      // Let the browser handle navigation to /#section
+      onClose();
+      return;
+    }
+
+    // On home page, prevent default and do smooth scroll
+    e.preventDefault();
     onClose();
 
-    // Smooth scroll to section
     setTimeout(() => {
       const element = document.querySelector(href);
       if (element) {
@@ -85,12 +95,13 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05, duration: 0.3 }}
                     >
-                      <button
-                        onClick={() => handleLinkClick(link.href)}
-                        className="w-full text-left px-4 py-3 text-lg font-medium text-gray-900 hover:text-gray-700 hover:bg-gray-50 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-gray-900"
+                      <a
+                        href={`/${link.href}`}
+                        onClick={(e) => handleLinkClick(e, link.href)}
+                        className="block w-full text-left px-4 py-3 text-lg font-medium text-gray-900 hover:text-gray-700 hover:bg-gray-50 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-gray-900"
                       >
                         {link.label}
-                      </button>
+                      </a>
                     </motion.li>
                   ))}
                 </ul>
