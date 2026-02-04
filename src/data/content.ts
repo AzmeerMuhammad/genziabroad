@@ -5,7 +5,7 @@
 // Edit this file to update content across the entire website.
 // ============================================================================
 
-import { LucideIcon, Briefcase, Users, TrendingUp, Target, Heart, Award, Mail, Phone, MapPin, Clock, Globe, FileText, Lightbulb } from 'lucide-react';
+import { LucideIcon, Briefcase, Users, TrendingUp, Target, Heart, Award, Mail, Phone, MapPin, Clock, Globe, FileText, Lightbulb, GraduationCap, BookOpen, Plane, Home, Shield, Star, CheckCircle, Headphones, Building, Calendar, Rocket, Zap, ThumbsUp, MessageCircle, HelpCircle, DollarSign, CreditCard, Landmark } from 'lucide-react';
 
 // ============================================================================
 // TYPE DEFINITIONS
@@ -31,7 +31,7 @@ export interface NavLink {
 
 export interface SocialLink {
   name: string;
-  iconName: 'Facebook' | 'Youtube' | 'Instagram' | 'Twitter' | 'Linkedin';
+  iconName: 'Facebook' | 'Youtube' | 'Instagram' | 'TikTok' | 'Linkedin' | 'Twitter' | 'Github' | 'Globe';
   href: string;
 }
 
@@ -43,7 +43,7 @@ export interface HeroContent {
 }
 
 export interface ServiceItem {
-  iconName: 'Briefcase' | 'Users' | 'TrendingUp' | 'Globe' | 'FileText' | 'Lightbulb';
+  iconName: 'Briefcase' | 'Users' | 'TrendingUp' | 'Globe' | 'FileText' | 'Lightbulb' | 'GraduationCap' | 'BookOpen' | 'Plane' | 'Home' | 'Shield' | 'Star' | 'CheckCircle' | 'Headphones' | 'Building' | 'Calendar' | 'DollarSign' | 'CreditCard' | 'Landmark';
   title: string;
   description: string;
 }
@@ -53,7 +53,7 @@ export interface ServiceDetailedItem extends ServiceItem {
 }
 
 export interface ValueItem {
-  iconName: 'Target' | 'Heart' | 'Award';
+  iconName: 'Target' | 'Heart' | 'Award' | 'Rocket' | 'Zap' | 'ThumbsUp' | 'Star' | 'Shield' | 'CheckCircle';
   title: string;
   description: string;
 }
@@ -97,7 +97,7 @@ export interface FAQItem {
 }
 
 export interface ContactInfoItem {
-  iconName: 'Mail' | 'Phone' | 'MapPin' | 'Clock';
+  iconName: 'Mail' | 'Phone' | 'MapPin' | 'Clock' | 'Globe' | 'MessageCircle' | 'HelpCircle' | 'Calendar';
   label: string;
   value: string;
   href: string | null;
@@ -128,12 +128,12 @@ export interface CTAContent {
 
 export const companyDetails: CompanyDetails = {
   name: 'GenziAbroad',
-  email: 'hello@genziabroad.com',
-  phone: '+49 176 16986058',
-  whatsappNumber: '4917616986058',
-  whatsappLink: 'https://wa.me/4917616986058?text=Hello!%20I%20have%20a%20question.',
-  whatsappBookingLink: 'https://wa.me/4917616986058?text=Hello!%20I%20would%20like%20to%20book%20a%20consultation.',
-  officeLocation: 'Karachi, Pakistan',
+  email: 'genziabroad@gmail.com',
+  phone: '+4915561674965',
+  whatsappNumber: '4915561674965',
+  whatsappLink: 'https://wa.me/4915561674965?text=Hello!%20I%20have%20a%20question.',
+  whatsappBookingLink: 'https://wa.me/4915561674965?text=Hello!%20I%20would%20like%20to%20book%20a%20consultation.',
+  officeLocation: 'Lahore, Pakistan',
   businessHours: 'Mon-Fri: 9:00 AM - 6:00 PM (PKT)',
   calendlyUrl: 'https://calendly.com/your-account/consultation',
   logoPlaceholder: 'LOGO HERE',
@@ -168,8 +168,8 @@ export const mobileNavLinks: NavLink[] = [
 export const socialLinks: SocialLink[] = [
   { name: 'Facebook', iconName: 'Facebook', href: '#' },
   { name: 'YouTube', iconName: 'Youtube', href: '#' },
-  { name: 'Instagram', iconName: 'Instagram', href: '#' },
-  { name: 'Twitter', iconName: 'Twitter', href: '#' },
+  { name: 'Instagram', iconName: 'Instagram', href: 'https://www.instagram.com/genziabroad?igsh=dHBxdGdhNDdyamsz' },
+  { name: 'TikTok', iconName: 'TikTok', href: 'https://www.tiktok.com/@genzi.abroad?_r=1&_t=ZG-93Xam8ckq1Y' },
   { name: 'LinkedIn', iconName: 'Linkedin', href: '#' },
 ];
 
@@ -807,19 +807,19 @@ export const contactInfo: ContactInfoItem[] = [
   {
     iconName: 'Mail',
     label: 'Email',
-    value: 'hello@genziabroad.com',
-    href: 'mailto:hello@genziabroad.com',
+    value: 'genziabroad@gamil.com',
+    href: 'mailto:genziabroad@gamil.com',
   },
   {
     iconName: 'Phone',
     label: 'Phone',
-    value: '+49 176 16986058',
-    href: 'tel:+49 176 16986058',
+    value: '+49 15561 674965',
+    href: 'tel:+49 15561 674965',
   },
   {
     iconName: 'MapPin',
     label: 'Office Location',
-    value: 'Karachi, Pakistan',
+    value: 'Lahore, Pakistan',
     href: null,
   },
   {

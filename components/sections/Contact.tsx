@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Phone, MapPin, Clock, LucideIcon } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, LucideIcon, Globe, MessageCircle, HelpCircle, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { contactInfo, contactSection, contactWhatsappSection, companyDetails, backgroundImages } from '@/src/data/content';
 
@@ -9,6 +9,10 @@ const iconMap: Record<string, LucideIcon> = {
   Phone,
   MapPin,
   Clock,
+  Globe,
+  MessageCircle,
+  HelpCircle,
+  Calendar,
 };
 
 export default function Contact() {

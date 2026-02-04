@@ -1,14 +1,18 @@
 'use client';
 
-import { Facebook, Youtube, Instagram, Twitter, Linkedin, LucideIcon } from 'lucide-react';
+import { Facebook, Youtube, Instagram, Linkedin, Twitter, Github, Globe, LucideIcon } from 'lucide-react';
+import { FaTiktok } from 'react-icons/fa';
 import { socialLinks, companyDetails } from '@/src/data/content';
 
-const iconMap: Record<string, LucideIcon> = {
+const iconMap: Record<string, LucideIcon | typeof FaTiktok> = {
   Facebook,
   Youtube,
   Instagram,
-  Twitter,
+  TikTok: FaTiktok,
   Linkedin,
+  Twitter,
+  Github,
+  Globe,
 };
 
 export default function Footer() {
@@ -26,7 +30,7 @@ export default function Footer() {
           </div>
 
           {/* Social Media Icons */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 md:mr-24">
             {socialLinks.map((social) => {
               const Icon = iconMap[social.iconName];
               return (

@@ -1,6 +1,6 @@
 'use client';
 
-import { Target, Heart, Award, CheckCircle, ArrowLeft, LucideIcon } from 'lucide-react';
+import { Target, Heart, Award, CheckCircle, ArrowLeft, LucideIcon, Rocket, Zap, ThumbsUp, Star, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
@@ -20,6 +20,12 @@ const iconMap: Record<string, LucideIcon> = {
   Target,
   Heart,
   Award,
+  Rocket,
+  Zap,
+  ThumbsUp,
+  Star,
+  Shield,
+  CheckCircle,
 };
 
 export default function AboutPage() {

@@ -1,6 +1,6 @@
 'use client';
 
-import { Briefcase, Users, TrendingUp, ArrowRight, LucideIcon } from 'lucide-react';
+import { Briefcase, Users, TrendingUp, ArrowRight, LucideIcon, Globe, FileText, Lightbulb, GraduationCap, BookOpen, Plane, Home, Shield, Star, CheckCircle, Headphones, Building, Calendar, DollarSign, CreditCard, Landmark } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { services, servicesSection, servicesExploreButtonText, backgroundImages } from '@/src/data/content';
@@ -9,6 +9,22 @@ const iconMap: Record<string, LucideIcon> = {
   Briefcase,
   Users,
   TrendingUp,
+  Globe,
+  FileText,
+  Lightbulb,
+  GraduationCap,
+  BookOpen,
+  Plane,
+  Home,
+  Shield,
+  Star,
+  CheckCircle,
+  Headphones,
+  Building,
+  Calendar,
+  DollarSign,
+  CreditCard,
+  Landmark,
 };
 
 export default function Services() {

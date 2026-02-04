@@ -5,6 +5,9 @@ import FloatingFAQButton from "@/components/ui/FloatingFAQButton";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 
+// Preload the hero background image
+const heroImageUrl = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80';
+
 const dmSerif = DM_Serif_Display({
   weight: ['400'],
   subsets: ["latin"],
@@ -30,6 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSerif.variable} ${poppins.variable}`} suppressHydrationWarning>
+      <head>
+        <link rel="preload" href={heroImageUrl} as="image" />
+      </head>
       <body className={`${poppins.className} antialiased`} suppressHydrationWarning>
         <ScrollToTop />
         {children}

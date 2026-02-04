@@ -1,6 +1,6 @@
 'use client';
 
-import { Briefcase, Users, TrendingUp, Globe, FileText, Lightbulb, CheckCircle, ArrowLeft, LucideIcon } from 'lucide-react';
+import { Briefcase, Users, TrendingUp, Globe, FileText, Lightbulb, CheckCircle, ArrowLeft, LucideIcon, GraduationCap, BookOpen, Plane, Home, Shield, Star, Headphones, Building, Calendar, DollarSign, CreditCard, Landmark } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
@@ -14,6 +14,18 @@ const iconMap: Record<string, LucideIcon> = {
   Globe,
   FileText,
   Lightbulb,
+  GraduationCap,
+  BookOpen,
+  Plane,
+  Home,
+  Shield,
+  Star,
+  Headphones,
+  Building,
+  Calendar,
+  DollarSign,
+  CreditCard,
+  Landmark,
 };
 
 export default function ServicesPage() {

@@ -28,29 +28,29 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
     };
   }, [isOpen]);
 
-  const handleLinkClick = (href: string) => {
-    onClose();
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
+  };
 
+  const handleLinkClick = (href: string) => {
     const isHomePage = pathname === '/';
     const sectionId = href.replace('#', '');
 
+    onClose();
+
     if (!isHomePage) {
-      // Use Next.js router for fast client-side navigation
-      router.push('/' + href);
+      // Navigate to home page first, then scroll after page renders
+      router.push('/');
+      setTimeout(() => scrollToSection(sectionId), 400);
       return;
     }
 
-    // We're on home page, do smooth scroll to section
-    setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 80;
-        window.scrollTo({
-          top: offsetTop,
-          behavior: 'smooth',
-        });
-      }
-    }, 300);
+    // We're on home page, scroll immediately after menu starts closing
+    setTimeout(() => scrollToSection(sectionId), 150);
   };
 
   return (

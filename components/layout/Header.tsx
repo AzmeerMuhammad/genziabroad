@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import Navigation from './Navigation';
 import Link from 'next/link';
@@ -9,25 +10,34 @@ import { navLinks } from '@/src/data/content';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
+  };
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('/#')) {
-      // If we're not on the home page, navigate to home first
-      if (window.location.pathname !== '/') {
-        window.location.href = href;
-        return;
-      }
-      // We're on home page, do smooth scroll
       e.preventDefault();
       const id = href.substring(2);
-      const element = document.getElementById(id);
-      if (element) {
-        const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 80;
-        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+
+      if (pathname !== '/') {
+        // Use client-side navigation then scroll after page renders
+        router.push('/');
+        setTimeout(() => scrollToSection(id), 400);
+        return;
       }
+
+      // We're on home page, do smooth scroll directly
+      scrollToSection(id);
     }
   };
 

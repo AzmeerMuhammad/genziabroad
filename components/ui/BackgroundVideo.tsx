@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 
 interface BackgroundVideoProps {
   videoSrc?: string;
@@ -18,38 +19,32 @@ export default function BackgroundVideo({
     setMounted(true);
   }, []);
 
-  // Always show fallback image during SSR and initial render
-  if (!mounted) {
-    return (
-      <div className="absolute inset-0 overflow-hidden">
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${fallbackImage})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
-      </div>
-    );
-  }
-
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {/* Fallback image */}
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center"
-        style={{ backgroundImage: `url(${fallbackImage})` }}
+      {/* Fallback image - using Next.js Image for optimization */}
+      <Image
+        src={fallbackImage}
+        alt="Background"
+        fill
+        priority
+        quality={80}
+        className="object-cover"
+        sizes="100vw"
       />
 
-      {/* Video Element - will show on top of fallback once loaded */}
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src={videoSrc} type="video/webm" />
-      </video>
+      {/* Video Element - only render on client to avoid hydration mismatch */}
+      {mounted && (
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={videoSrc} type="video/webm" />
+        </video>
+      )}
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
